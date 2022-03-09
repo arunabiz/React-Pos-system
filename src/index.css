@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue','SF Pro Text',"SF Pro Display",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  src: local("SF Pro Text"),
+  url("./assets/fonts/SF-Pro-Text-Bold.otf") format("truetype");
+  font-weight: Bold;
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: local("SF Pro Display"),
+  url("assets/fonts/SF-Pro-Display-Bold.OTF") format("truetype");
+  font-weight: Bold;
+}
+
+

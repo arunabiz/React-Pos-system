@@ -1,0 +1,247 @@
+.customertab{
+    font-family: "SF Pro Display";
+    font-size: 15px;
+    text-transform: capitalize;
+}
+
+.customertab i{
+    font-size: 25px;
+    vertical-align:middle;
+}
+
+.rowcustomer{
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+
+
+}
+
+.rowcustomer input{
+    width: 80%;
+    box-sizing: border-box;
+    border: none;
+    font-size: 1.3rem;
+    /*padding-left: 1rem;*/
+    padding-bottom: 0.5rem;
+    box-shadow: inset 0px -1.5px 0px 0px rgb(0, 0, 0);
+    transition: box-shadow 0.2s ease-in;
+}
+
+
+
+.rowcustomer select{
+    width: 80%;
+    box-sizing: border-box;
+    border: none;
+    font-size: 1.3rem;
+    /*padding-left: 1.5rem;*/
+    padding-bottom: 1rem;
+    box-shadow: inset 0px -2px 0px 0px rgb(0, 28, 45);
+    transition: box-shadow 0.2s ease-in;
+}
+
+.rowpinfo select{
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    font-size: 1.3rem;
+    padding-left: 1.5rem;
+    padding-bottom: 1rem;
+    box-shadow: inset 0px -3px 0px 0px rgb(0, 28, 45);
+    transition: box-shadow 0.2s ease-in;
+}
+
+.customertitle{
+    font-family: "SF Pro Display";
+}
+
+input:focus {
+    outline:none;
+    border:none;
+    border-style: none;
+}
+*:focus {
+    outline: none;
+    border:none;
+    border-style: none;
+}
+
+label {
+    float: left;
+}
+
+input[required] + label:after {
+    content: '*';
+    color: red;
+}
+
+.fieldaddbutton{
+    margin-top: 30px;
+    margin-right: 10px;
+    border-radius: 25px;
+    width: 20%;
+    height: 50px;
+    font-size: 1rem;
+    color: white;
+    font-family: "SF Pro Text";
+    font-weight: bold;
+    background: #003b62;
+    color: var(--txt-white);
+    border: 0px;
+    cursor: pointer;
+    transition: opacity 0.25s ease-out;
+
+}
+.fieldremovebutton{
+    margin-top: 30px;
+    margin-right: 10px;
+    border-radius: 25px;
+    width: 20%;
+    height: 50px;
+    font-size: 1rem;
+    color: white;
+    font-family: "SF Pro Text";
+    font-weight: bold;
+    background: #3f0121;
+    color: var(--txt-white);
+    border: 0px;
+    cursor: pointer;
+    transition: opacity 0.25s ease-out;
+
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.rowpinfo input:focus,
+.rowcustomer input:focus{
+    box-shadow: inset 0px -2px 0px 0px rgb(0, 28, 45);
+    outline:none;
+    border:none;
+    border-style: none;
+}
+
+.rowcustomer input::-webkit-input-placeholder{
+    opacity: 1;
+    transition: opacity 0.25s ease-out;
+}
+
+.rowcustomer input:hover::-webkit-input-placeholder,
+.rowcustomer input:focus::-webkit-input-placeholder{
+    opacity: 0;
+}
+
+.rowcustomer label{
+    align-self: start;
+    /*padding-left: 4.5rem;*/
+    padding-bottom: 0.5rem;
+    color: #8C9499;
+}
+
+.rowcustomerbutton{
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 2rem;
+}
+.rowcustomerbutton button{
+
+    border-radius: 25px;
+    width: 20%;
+    height: 50px;
+    font-size: 1rem;
+    color: white;
+    font-family: "SF Pro Text";
+    font-weight: bold;
+    background: #001C2D;
+    color: var(--txt-white);
+    border: 0px;
+    cursor: pointer;
+    transition: opacity 0.25s ease-out;
+}
+
+.rowcustomer button:hover{
+    opacity: 0.8;
+}
+
+@media screen and (max-width: 900px) {
+    .rowcustomer input{
+        width: 60%;
+        box-sizing: border-box;
+        border: none;
+        font-size: 1.3rem;
+        padding-left: 1.5rem;
+        padding-bottom: 0.5rem;
+        box-shadow: inset 0px -3px 0px 0px rgba(187, 187, 187, 0.2);
+        transition: box-shadow 0.2s ease-in;
+    }
+    .rowcustomer label{
+        align-self: start;
+        padding-left: 5rem;
+        padding-bottom: 0.5rem;
+        color: rgba(187,187,187,0.9);
+    }
+    .rowcustomer select{
+        width: 60%;
+        box-sizing: border-box;
+        border: none;
+        font-size: 1.3rem;
+        padding-left: 1.5rem;
+        padding-bottom: 1rem;
+        box-shadow: inset 0px -3px 0px 0px rgba(187,187,187,0.2);
+        transition: box-shadow 0.2s ease-in;
+    }
+    .usertblbutton{
+        border-radius: 5px;
+        width: 90%;
+        height: 30px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        border: 0px;
+    }
+    .usertblactivebutton{
+        border-radius: 5px;
+        width: 90%;
+        height: 30px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        border: 0px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .rowcustomer input{
+        width: 50%;
+        box-sizing: border-box;
+        border: none;
+        font-size: 0.8rem;
+        padding-left: 1rem;
+        padding-bottom: 0.5rem;
+        box-shadow: inset 0px -3px 0px 0px rgba(187, 187, 187, 0.2);
+        transition: box-shadow 0.2s ease-in;
+    }
+    .rowcustomer label{
+        align-self: start;
+        padding-left: 4.5rem;
+        padding-bottom: 0.5rem;
+        color: rgba(187,187,187,0.9);
+    }
+    .rowcustomer select{
+        width: 50%;
+        box-sizing: border-box;
+        border: none;
+        font-size: 0.8rem;
+        padding-left: 1rem;
+        padding-bottom: 1rem;
+        box-shadow: inset 0px -3px 0px 0px rgba(187,187,187,0.2);
+        transition: box-shadow 0.2s ease-in;
+    }
+
+}

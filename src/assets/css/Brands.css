@@ -1,0 +1,181 @@
+.rowbrands{
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+
+
+}
+
+.rowbrands input{
+    width: 80%;
+    box-sizing: border-box;
+    border: none;
+    font-size: 1.3rem;
+    /*padding-left: 1rem;*/
+    padding-bottom: 0.5rem;
+    box-shadow: inset 0px -1.5px 0px 0px rgb(0, 0, 0);
+    transition: box-shadow 0.2s ease-in;
+}
+
+
+
+.rowbrands select{
+    width: 80%;
+    box-sizing: border-box;
+    border: none;
+    font-size: 1.3rem;
+    padding-left: 1.5rem;
+    padding-bottom: 1rem;
+    box-shadow: inset 0px -3px 0px 0px rgba(187,187,187,0.2);
+    transition: box-shadow 0.2s ease-in;
+}
+
+.rowpinfo select{
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    font-size: 1.3rem;
+    padding-left: 1.5rem;
+    padding-bottom: 1rem;
+    box-shadow: inset 0px -3px 0px 0px rgba(187,187,187,0.2);
+    transition: box-shadow 0.2s ease-in;
+}
+
+.brandtitle{
+    font-family: "SF Pro Display";
+}
+
+input:focus {
+    outline:none;
+    border:none;
+    border-style: none;
+}
+*:focus {
+    outline: none;
+    border:none;
+    border-style: none;
+}
+
+.rowpinfo input:focus,
+.rowbrands input:focus{
+    box-shadow: inset 0px -2px 0px 0px rgb(0, 28, 45);
+    outline:none;
+    border:none;
+    border-style: none;
+}
+
+.rowbrands input::-webkit-input-placeholder{
+    opacity: 1;
+    transition: opacity 0.25s ease-out;
+}
+
+.rowbrands input:hover::-webkit-input-placeholder,
+.rowbrands input:focus::-webkit-input-placeholder{
+    opacity: 0;
+}
+
+.rowbrands label{
+    align-self: start;
+    /*padding-left: 4.5rem;*/
+    padding-bottom: 0.5rem;
+    color: #8C9499;
+}
+
+.rowbrandsbutton{
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 2rem;
+}
+.rowbrandsbutton button{
+
+    border-radius: 25px;
+    width: 30%;
+    height: 50px;
+    font-size: 1rem;
+    color: white;
+    font-family: "SF Pro Text";
+    font-weight: bold;
+    background: #001C2D;
+    color: var(--txt-white);
+    border: 0px;
+    cursor: pointer;
+    transition: opacity 0.25s ease-out;
+}
+
+.rowbrands button:hover{
+    opacity: 0.8;
+}
+
+@media screen and (max-width: 900px) {
+    .rowbrands input{
+        width: 60%;
+        box-sizing: border-box;
+        border: none;
+        font-size: 1.3rem;
+        padding-left: 1.5rem;
+        padding-bottom: 0.5rem;
+        box-shadow: inset 0px -3px 0px 0px rgba(187, 187, 187, 0.2);
+        transition: box-shadow 0.2s ease-in;
+    }
+    .rowbrands label{
+        align-self: start;
+        padding-left: 5rem;
+        padding-bottom: 0.5rem;
+        color: rgba(187,187,187,0.9);
+    }
+    .rowbrands select{
+        width: 60%;
+        box-sizing: border-box;
+        border: none;
+        font-size: 1.3rem;
+        padding-left: 1.5rem;
+        padding-bottom: 1rem;
+        box-shadow: inset 0px -3px 0px 0px rgba(187,187,187,0.2);
+        transition: box-shadow 0.2s ease-in;
+    }
+    .usertblbutton{
+        border-radius: 5px;
+        width: 90%;
+        height: 30px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        border: 0px;
+    }
+    .usertblactivebutton{
+        border-radius: 5px;
+        width: 90%;
+        height: 30px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        border: 0px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .rowbrands input{
+        width: 50%;
+        box-sizing: border-box;
+        border: none;
+        font-size: 0.8rem;
+        padding-left: 1rem;
+        padding-bottom: 0.5rem;
+        box-shadow: inset 0px -3px 0px 0px rgba(187, 187, 187, 0.2);
+        transition: box-shadow 0.2s ease-in;
+    }
+    .rowbrands label{
+        align-self: start;
+        padding-left: 4.5rem;
+        padding-bottom: 0.5rem;
+        color: rgba(187,187,187,0.9);
+    }
+    .rowbrands select{
+        width: 50%;
+        box-sizing: border-box;
+        border: none;
+        font-size: 0.8rem;
+        padding-left: 1rem;
+        padding-bottom: 1rem;
+        box-shadow: inset 0px -3px 0px 0px rgba(187,187,187,0.2);
+        transition: box-shadow 0.2s ease-in;
+    }
+
+}
