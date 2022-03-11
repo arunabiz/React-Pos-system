@@ -11,7 +11,7 @@ import Products from "../Pages/Products";
 import Invoices from "../Pages/Invoices/Invoices";
 import Quotations from "../Pages/Invoices/Quotations";
 import Damage from "../Pages/Returns/Damage";
-import Salereport from "../Pages/Sales/sales"
+import Salereport from "../Pages/Reports/sales"
 
 
 
@@ -35,6 +35,7 @@ const Path = () => {
             <Route path="/Sales/sales" element={<Salereport/>} />
             <Route path="/billing/quotations" element={<Quotations/>} />
             <Route path="/products/return" element={<Damage/>} />
+
 
         </Routes>
 
