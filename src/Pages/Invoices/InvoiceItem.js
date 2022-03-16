@@ -36,38 +36,38 @@ const InvoiceItem =(props) =>{
     return (
         <>
             <div>
-                <h2>Services</h2>
+                <h2>Services (خدمات)</h2>
                 <Table>
                     <thead>
                     <tr>
-                        <th>ITEM</th>
-                        <th>QTY</th>
-                        <th>PRICE/RATE</th>
-                        <th className="text-center">ACTION</th>
+                        <th>ITEM (غرض)</th>
+                        <th>QTY (الكمية)</th>
+                        <th>PRICE/RATE (معدل السعر)</th>
+                        <th className="text-center">ACTION (عمل)</th>
                     </tr>
                     </thead>
                     <tbody>
                     {itemTable}
                     </tbody>
                 </Table>
-                <Button style={{background:'#19335A' ,outline:"none", border:"none"}} className="fw-bold" onClick={onRowAdd}>Add Item</Button>
+                <Button style={{background:'#19335A' ,outline:"none", border:"none"}} className="fw-bold" onClick={onRowAdd}>Add Item (اضافة عنصر)</Button>
             </div>
     <div>
-        <h2>Spare Parts</h2>
+        <h2>Spare Parts (قطعة منفصلة)</h2>
         <Table>
             <thead>
             <tr>
-                <th>ITEM</th>
-                <th>QTY</th>
-                <th>PRICE/RATE</th>
-                <th className="text-center">ACTION</th>
+                <th>ITEM (غرض)</th>
+                <th>QTY (الكمية)</th>
+                <th>PRICE/RATE (معدل السعر)</th>
+                <th className="text-center">ACTION (عمل)</th>
             </tr>
             </thead>
             <tbody>
             {partsTable}
             </tbody>
         </Table>
-        <Button style={{background:'#19335A' ,outline:"none", border:"none"}} className="fw-bold" onClick={onRowPartAdd}>Add Item</Button>
+        <Button style={{background:'#19335A' ,outline:"none", border:"none"}} className="fw-bold" onClick={onRowPartAdd}>Add Item (اضافة عنصر)</Button>
     </div>
         </>
         );
