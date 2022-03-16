@@ -90,7 +90,7 @@ const Invoices = () => {
                 return <Button
                     variant="contained"
                     color="primary"
-                    size="small"
+                    size="large"
                     style={{marginLeft: 16}}
                     onClick={() => viewhandle(params.row.pdf)}
                 >

@@ -7,6 +7,7 @@ import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 import InvoiceItem from './InvoiceItem';
 import InvoiceModal from './InvoiceModal';
+import Jobcard from './Jobcard';
 import InputGroup from 'react-bootstrap/InputGroup';
 import axios from "axios";
 
@@ -408,7 +409,10 @@ const InvoiceForm = (props) => {
                 <Col md={4} lg={3}>
                     <div className="sticky-top pt-md-3 pt-xl-4">
                         <Button variant="primary" style={{background:'#19335A' ,outline:"none", border:"none"}} type="submit" className="d-block w-100">Review Invoice</Button>
+                        <br></br>
+                        <Button variant="primary" style={{background:'#19335A' ,outline:"none", border:"none"}} type="submit" className="d-block w-100">Job Card</Button>
                         <InvoiceModal showModal={isOpen}  closeModal={closeModal} invoiceNumber={invoiceNumber} billTo={billTo} billToAddress={billToAddress} billToEmail={billToEmail} billFrom={billFrom} billFromAddress={billFromAddress} notes={notes} billFromEmail={billFromEmail} dateOfIssue={dateOfIssue} items={items} parts={parts} currency={currency} subTotal={subTotal} taxAmmount={taxAmount} discountAmmount={discountAmount} total={total} customer={VNumber} VBrand={VBrand} VModel={VModel} Chassis={CNumber} Year={VYear} color={VColor}/>
+                        <Jobcard showModal={isOpen}  closeModal={closeModal} invoiceNumber={invoiceNumber} billTo={billTo} billToAddress={billToAddress} billToEmail={billToEmail} billFrom={billFrom} billFromAddress={billFromAddress} notes={notes} billFromEmail={billFromEmail} dateOfIssue={dateOfIssue} items={items} parts={parts} currency={currency} subTotal={subTotal} taxAmmount={taxAmount} discountAmmount={discountAmount} total={total} customer={VNumber} VBrand={VBrand} VModel={VModel} Chassis={CNumber} Year={VYear} color={VColor}/>
                         <Form.Group className="mb-3">
                             <Form.Label className="fw-bold">Currency:</Form.Label>
                             <Form.Select onChange={event => onCurrencyChange( event.target.value)} className="btn btn-light my-1" aria-label="Change Currency">
