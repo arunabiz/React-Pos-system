@@ -313,19 +313,19 @@ const InvoiceForm = (props) => {
                             <div className="d-flex flex-column">
                                 <div className="d-flex flex-column">
                                     <div className="mb-2">
-                                        <span className="fw-bold">Current&nbsp;Date:&nbsp;</span>
+                                        <span className="fw-bold">Current&nbsp;Date (التاريخ الحالي):&nbsp;</span>
                                         <span className="current-date">{new Date().toLocaleDateString()}</span>
                                     </div>
                                 </div>
                                 <div className="d-flex flex-row align-items-center">
-                                    <span className="fw-bold d-block me-2">Due&nbsp;Date:</span>
+                                    <span className="fw-bold d-block me-2">Due&nbsp;Date (تاريخ الاستحقاق):</span>
                                     <Form.Control type="date" value={dateOfIssue} name={"dateOfIssue"} onChange={(event) => updatedateOfIssue(event)} style={{
                                         maxWidth: '150px'
                                     }} required="required"/>
                                 </div>
                             </div>
                             <div className="d-flex flex-row align-items-center">
-                                <span className="fw-bold me-2">Invoice&nbsp;Number:&nbsp;</span>
+                                <span className="fw-bold me-2">Invoice&nbsp;Number (رقم الفاتورة):&nbsp;</span>
                                 <Form.Control type="number" value={invoiceNumber} name={"invoiceNumber"} onChange={(event) => updateinvoiceNumber(event)} min="1" style={{
                                     maxWidth: '70px'
                                 }} required="required"/>
@@ -334,36 +334,36 @@ const InvoiceForm = (props) => {
                         <h1 style={{textAlign:"center"}}>{props.Heading}</h1>
                         <hr className="my-4"/>
                         <Row className="mb-5">
-                            <Form.Label className="fw-bold">Vehicle Details</Form.Label>
+                            <Form.Label className="fw-bold">Vehicle Details (تفاصيل السيارة)</Form.Label>
                             <Col>
                                 <Form.Select  placeholder={"Vehicle Number"} rows={3} value={VNumber} type="text" name="vnumber" className="my-2" onChange={(event) => updateVNumber(event)} autoComplete="vnumber" required="required">
-                                    <option>Select the vehicle number</option>
+                                    <option>Select the vehicle number (حدد رقم السيارة)</option>
                                     {Customers.map((items, i) => (
                                         <option key={i} value={items.vehicleNumber} >{items.vehicleNumber}</option>
                                     ))}
                                 </Form.Select>
-                                <Form.Control placeholder={"Vehicle Brand"} value={VBrand} type="text" name="brand" className="my-2" onChange={(event) => updateVBrand(event)} autoComplete="text" required="required"/>
-                                <Form.Control placeholder={"Vehicle Model"} value={VModel} type="text" name="VModel" className="my-2" autoComplete="VModel" onChange={(event) => updateVModel(event)} required="required"/>
+                                <Form.Control placeholder={"Vehicle Brand (ماركة السيارة)"} value={VBrand} type="text" name="brand" className="my-2" onChange={(event) => updateVBrand(event)} autoComplete="text" required="required"/>
+                                <Form.Control placeholder={"Vehicle Model (موديل السيارة)"} value={VModel} type="text" name="VModel" className="my-2" autoComplete="VModel" onChange={(event) => updateVModel(event)} required="required"/>
                             </Col>
                             <Col>
-                                <Form.Control placeholder={"Chassis Number"} rows={3} value={CNumber} type="text" name="CNumber" className="my-2" onChange={(event) => updateCNumber(event)} autoComplete="CNumber" required="required"/>
-                                <Form.Control placeholder={"Vehicle Year"} value={VYear} type="number" name="VYear" className="my-2" onChange={(event) => updateVYear(event)} autoComplete="VYear" required="required"/>
-                                <Form.Control placeholder={"Vehicle Color"} value={VColor} type="text" name="VColor" className="my-2" autoComplete="VColor" onChange={(event) => updateVColor(event)} required="required"/>
+                                <Form.Control placeholder={"Chassis Number (رقم الهيكل)"} rows={3} value={CNumber} type="text" name="CNumber" className="my-2" onChange={(event) => updateCNumber(event)} autoComplete="CNumber" required="required"/>
+                                <Form.Control placeholder={"Vehicle Year (سنة المركبة)"} value={VYear} type="number" name="VYear" className="my-2" onChange={(event) => updateVYear(event)} autoComplete="VYear" required="required"/>
+                                <Form.Control placeholder={"Vehicle Color (لون السيارة)"} value={VColor} type="text" name="VColor" className="my-2" autoComplete="VColor" onChange={(event) => updateVColor(event)} required="required"/>
                             </Col>
                         </Row>
                         <hr className="my-4"/>
                         <Row className="mb-5">
                             <Col>
-                                <Form.Label className="fw-bold">Bill to:</Form.Label>
-                                <Form.Control placeholder={"Who is this invoice to?"} rows={3} value={billTo} type="text" name="billTo" className="my-2" onChange={(event) => updatebillTo(event)} autoComplete="name" required="required"/>
-                                <Form.Control placeholder={"Mobile Number"} value={billToEmail} type="tel" name="billToEmail" className="my-2" onChange={(event) => updatebillToEmail(event)} autoComplete="tel" required="required"/>
-                                <Form.Control placeholder={"Billing address"} value={billToAddress} type="text" name="billToAddress" className="my-2" autoComplete="address" onChange={(event) => updatebillToAddress(event)} required="required"/>
+                                <Form.Label className="fw-bold">Bill to (فاتورة الى):</Form.Label>
+                                <Form.Control placeholder={"Who is this invoice to? (لمن هذه الفاتورة؟)"} rows={3} value={billTo} type="text" name="billTo" className="my-2" onChange={(event) => updatebillTo(event)} autoComplete="name" required="required"/>
+                                <Form.Control placeholder={"Mobile Number (رقم الهاتف المحمول)"} value={billToEmail} type="tel" name="billToEmail" className="my-2" onChange={(event) => updatebillToEmail(event)} autoComplete="tel" required="required"/>
+                                <Form.Control placeholder={"Billing address (عنوان وصول الفواتير)"} value={billToAddress} type="text" name="billToAddress" className="my-2" autoComplete="address" onChange={(event) => updatebillToAddress(event)} required="required"/>
                             </Col>
                             <Col>
-                                <Form.Label className="fw-bold">Bill from:</Form.Label>
-                                <Form.Control placeholder={"Who is this invoice from?"} rows={3} value={billFrom} type="text" name="billFrom" className="my-2" onChange={(event) => updatebillFrom(event)} autoComplete="name" required="required"/>
-                                <Form.Control placeholder={"Mobile Number"} value={billFromEmail} type="tel" name="billFromEmail" className="my-2" onChange={(event) => updatebillFromEmail(event)} autoComplete="tel" required="required"/>
-                                <Form.Control placeholder={"Billing address"} value={billFromAddress} type="text" name="billFromAddress" className="my-2" autoComplete="address" onChange={(event) => updatebillFromAddress(event)} required="required"/>
+                                <Form.Label className="fw-bold">Bill from (بيل من):</Form.Label>
+                                <Form.Control placeholder={"Who is this invoice from? (من هذه الفاتورة؟)"} rows={3} value={billFrom} type="text" name="billFrom" className="my-2" onChange={(event) => updatebillFrom(event)} autoComplete="name" required="required"/>
+                                <Form.Control placeholder={"Mobile Number (رقم الهاتف المحمول)"} value={billFromEmail} type="tel" name="billFromEmail" className="my-2" onChange={(event) => updatebillFromEmail(event)} autoComplete="tel" required="required"/>
+                                <Form.Control placeholder={"Billing address (عنوان وصول الفواتير)"} value={billFromAddress} type="text" name="billFromAddress" className="my-2" autoComplete="address" onChange={(event) => updatebillFromAddress(event)} required="required"/>
                             </Col>
                         </Row>
                         <InvoiceItem onItemizedItemEdit={onItemizedItemEdit} onItemizedPartsEdit={onItemizedPartsEdit} onRowAdd={handleAddEvent} onRowPartAdd={handlePartAddEvent} onRowDel={handleRowDel} onPartRowDel={handlePartRowDel} currency={currency} items={items} item={service} dataparts={parts} parts={Parts}/>

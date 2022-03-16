@@ -117,59 +117,59 @@ const InvoiceModal =(props)=> {
                             <div className="w-100">
                                 <h4 className="fw-bold my-2">{props.billFrom||'Class Motors L.L.C'}</h4>
                                 <h6 className="fw-bold text-secondary mb-1">
-                                    Invoice #: {props.invoiceNumber||''}
+                                    Invoice(فاتورة) #: {props.invoiceNumber||''}
                                 </h6>
                             </div>
                             <div className="text-end ms-4">
-                                <h6 className="fw-bold mt-1 mb-2">Amount&nbsp;Due:</h6>
+                                <h6 className="fw-bold mt-1 mb-2">Amount&nbsp;Due (المبلغ المستحق):</h6>
                                 <h5 className="fw-bold text-secondary"> {props.currency} {props.total}</h5>
                             </div>
                         </div>
                         <div className="p-4">
                             <Row className="mb-4">
                                 <Col md={4}>
-                                    <div className="fw-bold">Billed to:</div>
+                                    <div className="fw-bold">Billed to (دفع ل):</div>
                                     <div>{props.billTo||''}</div>
                                     <div>{props.billToAddress||''}</div>
                                     <div>{props.billToEmail||''}</div>
                                 </Col>
                                 <Col md={4}>
-                                    <div className="fw-bold">Billed From:</div>
+                                    <div className="fw-bold">Billed From (وصفت من):</div>
                                     <div>{props.billFrom||''}</div>
                                     <div>{props.billFromAddress||''}</div>
                                     <div>{props.billFromEmail||''}</div>
                                 </Col>
                                 <Col md={4}>
-                                    <div className="fw-bold ">Date Of Issue:</div>
+                                    <div className="fw-bold ">Date Of Issue (تاريخ المسألة):</div>
                                     <div>{props.dateOfIssue||''}</div>
                                 </Col>
                             </Row>
                             <Row className="mb-4">
                                 <Col md={6}>
-                                    <div className="fw-bold">Vehicle No:</div>
+                                    <div className="fw-bold">Vehicle No (السيارة لا):</div>
                                     <div>{props.customer||''}</div>
-                                    <div className="fw-bold">Vehicle Brand:</div>
+                                    <div className="fw-bold">Vehicle Brand (ماركة السيارة):</div>
                                     <div>{props.VBrand||''}</div>
-                                    <div className="fw-bold">Vehicle Model:</div>
+                                    <div className="fw-bold">Vehicle Model (موديل السيارة):</div>
                                     <div>{props.VModel||''}</div>
                                 </Col>
                                 <Col md={6}>
-                                    <div className="fw-bold">Chassis number:</div>
+                                    <div className="fw-bold">Chassis number (رقم الهيكل):</div>
                                     <div>{props.Chassis||''}</div>
-                                    <div className="fw-bold">Year:</div>
+                                    <div className="fw-bold">Year (سنة):</div>
                                     <div>{props.Year||''}</div>
-                                    <div className="fw-bold">Color:</div>
+                                    <div className="fw-bold">Color (اللون):</div>
                                     <div>{props.color||''}</div>
                                 </Col>
                             </Row>
-                            <div className="fw-bold">Services</div>
+                            <div className="fw-bold">Services (خدمات)</div>
                             <Table className="mb-0">
                                 <thead>
                                 <tr>
-                                    <th>QTY</th>
-                                    <th>DESCRIPTION</th>
-                                    <th className="text-end">PRICE</th>
-                                    <th className="text-end">AMOUNT</th>
+                                    <th>QTY (الكمية)</th>
+                                    <th>DESCRIPTION (وصف)</th>
+                                    <th className="text-end">PRICE (السعر)</th>
+                                    <th className="text-end">AMOUNT (مقدار)</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -189,14 +189,14 @@ const InvoiceModal =(props)=> {
                                 })}
                                 </tbody>
                             </Table>
-                            <div className="fw-bold">Spare Parts</div>
+                            <div className="fw-bold">Spare Parts (قطعة منفصلة)</div>
                             <Table className="mb-0">
                                 <thead>
                                 <tr>
-                                    <th>QTY</th>
-                                    <th>DESCRIPTION</th>
-                                    <th className="text-end">PRICE</th>
-                                    <th className="text-end">AMOUNT</th>
+                                    <th>QTY (الكمية)</th>
+                                    <th>DESCRIPTION (وصف)</th>
+                                    <th className="text-end">PRICE (السعر)</th>
+                                    <th className="text-end">AMOUNT (مقدار)</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -225,26 +225,26 @@ const InvoiceModal =(props)=> {
                                 </tr>
                                 <tr className="text-end">
                                     <td></td>
-                                    <td className="fw-bold" style={{width: '130px'}}>SUBTOTAL</td>
+                                    <td className="fw-bold" style={{width: '130px'}}>SUBTOTAL (المجموع الفرعي)</td>
                                     <td className="text-end" style={{width: '130px'}}>{props.currency} {props.subTotal}</td>
                                 </tr>
                                 {props.taxAmmount != 0.00 &&
                                     <tr className="text-end">
                                         <td></td>
-                                        <td className="fw-bold" style={{width: '130px'}}>TAX</td>
+                                        <td className="fw-bold" style={{width: '130px'}}>TAX (ضريبة)</td>
                                         <td className="text-end" style={{width: '130px'}}>{props.currency} {props.taxAmmount}</td>
                                     </tr>
                                 }
                                 {props.discountAmmount != 0.00 &&
                                     <tr className="text-end">
                                         <td></td>
-                                        <td className="fw-bold" style={{width: '130px'}}>DISCOUNT</td>
+                                        <td className="fw-bold" style={{width: '130px'}}>DISCOUNT (خصم)</td>
                                         <td className="text-end" style={{width: '130px'}}>{props.currency} {props.discountAmmount}</td>
                                     </tr>
                                 }
                                 <tr className="text-end">
                                     <td></td>
-                                    <td className="fw-bold" style={{width: '130px'}}>TOTAL</td>
+                                    <td className="fw-bold" style={{width: '130px'}}>TOTAL (المجموع)</td>
                                     <td className="text-end" style={{width: '130px'}}>{props.currency} {props.total}</td>
                                 </tr>
                                 </tbody>
@@ -259,13 +259,13 @@ const InvoiceModal =(props)=> {
                         <Row>
                             <Col md={6}>
                                 <Button variant="primary" className="d-block w-100" onClick={GenerateInvoice}>
-                                    <BiPaperPlane style={{width: '15px', height: '15px', marginTop: '-3px'}} className="me-2"/>Send Invoice
+                                    <BiPaperPlane style={{width: '15px', height: '15px', marginTop: '-3px'}} className="me-2"/>Send Invoice (إرسال الفاتورة)
                                 </Button>
                             </Col>
                             <Col md={6}>
                                 <Button variant="outline-primary" className="d-block w-100 mt-3 mt-md-0" onClick={download}>
                                     <BiCloudDownload style={{width: '16px', height: '16px', marginTop: '-3px'}} className="me-2"/>
-                                    Download Copy
+                                    Download Copy (تنزيل نسخة)
                                 </Button>
                             </Col>
                         </Row>
