@@ -86,7 +86,7 @@ const Suppliers = () => {
     const submit =(e) =>{
         e.preventDefault();
 
-        axios.post('https://posautotest.herokuapp.com/api/supplier/register/', {
+        axios.post('http://posautotest.herokuapp.com/api/supplier/register/', {
             supplierName: Name,
             supplierContact: Contact,
             supplierAddress: Address,

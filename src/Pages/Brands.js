@@ -35,7 +35,7 @@ const Brands = () => {
     }
 
     useEffect(() => {
-        axios.get('https://posautotest.herokuapp.com/api/brand/get/').then((response) => {
+        axios.get('http://127.0.0.1:8000/api/brand/get/').then((response) => {
             setbrands(response.data.data);
         });
     }, [status]);
@@ -43,7 +43,7 @@ const Brands = () => {
     const submit =(e) =>{
         e.preventDefault();
 
-        axios.post('https://posautotest.herokuapp.com/api/brand/register/', {
+        axios.post('http://127.0.0.1:8000/api/brand/register/', {
             name: Name
         })
             .then(function (response) {

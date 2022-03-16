@@ -2,6 +2,7 @@ import React from 'react'
 // eslint-disable-next-line no-unused-vars
 import Sidebar from "../../components/sidebar/Sidebar";
 import TopNav from "../../components/topnav/TopNav";
+import "../../assets/css/salereport.css";
 import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
@@ -135,40 +136,82 @@ const Salereport = () => {
 
                         <TabPanel value={value} index={0}>
                             {/*<div className="card full-height">*/}
-                            <div className="row">
-                                <div className="col-12">
+
                                     <div className="card full-height">
                                         <div>
                                             <h2 className="brandtitle">Sale Report</h2>
                                             <form onSubmit="#">
-                                                <div className="row">
-                                                    <div className="col-3">
+                                                <div className="row mx-0">
+                                                    <div className="col-4">
                                                         <div className="rowcustomer">
                                                             <label>From Date :</label>
                                                             <input type="date" autoFocus placeholder="" value="#" required/>
                                                         </div>
                                                     </div>
-                                                    <div className="col-3">
+                                                    <div className="col-4">
                                                         <div className="rowcustomer">
                                                             <label>To Date:</label>
                                                             <input type="date" autoFocus placeholder="" value="#" required/>
                                                         </div>
                                                     </div>
-                                                    <div className="col-3">
+                                                    <div className="col-4">
                                                         <div id="button" className="rowbrandsbutton">
-                                                            <button type="submit" className="btn" >Filter</button>
-                                                        </div>
-                                                        <div id="button" className="rowbrandsbutton">
+                                                            <button  type="submit" className="btn mx-2">Filter</button>
                                                             <button type="submit" className="btn">Clear</button>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 
                                             </form>
+
+
+
+                                            <div className="row ">
+                                                    <div className="col-3">
+                                                        <div className="info-box">
+                                                            <div className="info-box-icon bg-navy"><i className="fa fa-money"></i></div>
+
+                                                            <div className="info-box-content">
+                                                                <div className="info-box-text">Total Sale Profit</div>
+                                                                <div className="info-box-number">Rs.&nbsp;650</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-3">
+                                                        <div className="info-box">
+                                                            <div className="info-box-icon bg-navy"><i className="fa fa-money"></i></div>
+
+                                                            <div className="info-box-content">
+                                                                <div className="info-box-text">Total Sale Profit</div>
+                                                                <div className="info-box-number">Rs.&nbsp;650</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-3">
+                                                        <div className="info-box">
+                                                            <div className="info-box-icon bg-navy"><i className="fa fa-money"></i></div>
+
+                                                            <div className="info-box-content">
+                                                                <div className="info-box-text">Total Sale Profit</div>
+                                                                <div className="info-box-number">Rs.&nbsp;650</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-3">
+                                                        <div className="info-box">
+                                                            <div className="info-box-icon bg-navy"><i className="fa fa-money"></i></div>
+
+                                                            <div className="info-box-content">
+                                                                <div className="info-box-text">Total Sale Profit</div>
+                                                                <div className="info-box-number">Rs.&nbsp;650</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
+        
                             {/*</div>*/}
                         </TabPanel>
                         <TabPanel value={value} index={1}>

@@ -83,13 +83,13 @@ const Products = () => {
 
 
     useEffect(() => {
-        axios.get('https://posautotest.herokuapp.com/api/brand/get/').then((response) => {
+        axios.get('https://127.0.0.1:8000/api/brand/get/').then((response) => {
             setbrands(response.data.data);
         });
-        axios.get('https://posautotest.herokuapp.com/api/supplier/get/').then((response) => {
+        axios.get('https://127.0.0.1:8000/api/supplier/get/').then((response) => {
             setsuppliers(response.data.data);
         });
-        axios.get('https://posautotest.herokuapp.com/api/product/get/').then((response) => {
+        axios.get('https://127.0.0.1:8000/api/product/get/').then((response) => {
             setproducts(response.data.data);
         });
     }, [status]);
@@ -182,7 +182,7 @@ const Products = () => {
     const submit =(e) =>{
         e.preventDefault();
 
-        axios.post('https://posautotest.herokuapp.com/api/product/register/', {
+        axios.post('https://127.0.0.1:8000/api/product/register/', {
             supplier: Supplier,
             input
         })

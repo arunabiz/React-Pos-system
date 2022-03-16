@@ -115,7 +115,7 @@ const Customer = () => {
     }
 
     useEffect(() => {
-        axios.get('https://posautotest.herokuapp.com/api/customer/get/').then((response) => {
+        axios.get('http://127.0.0.1:8000/api/customer/get/').then((response) => {
             setCustomers(response.data.data);
         });
 
@@ -127,7 +127,7 @@ const Customer = () => {
     const submit =(e) =>{
         e.preventDefault();
 
-        axios.post('https://posautotest.herokuapp.com/api/customer/register/', {
+        axios.post('http://127.0.0.1:8000/api/customer/register/', {
             name: Name,
             contactNo: Contact,
             address: Address,
