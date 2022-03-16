@@ -4,7 +4,7 @@ import {BrowserRouter, Redirect, Route, Switch,Routes,Navigate  } from 'react-ro
 
 
 import Dashboard from '../Pages/Dashboard'
-import Brands from "../Pages/Brands";
+import Brands from "../Pages/Brand";
 import Customer from "../Pages/Customer";
 import Suppliers from "../Pages/Suppliers";
 import Products from "../Pages/Products";
@@ -26,8 +26,8 @@ const Path = () => {
             {/*</Route>*/}
 
             <Route path="/Dashboard" element={<Dashboard/>} />
-                <Route path="/" element={<Navigate to="/Dashboard" />}/>
-            <Route path="/products/brands" element={<Brands/>} />
+            <Route path="/" element={<Navigate to="/Dashboard" />}/>
+            <Route path="/products/Brand" element={<Brands/>} />
             <Route path="/register/customer" element={<Customer/>} />
             <Route path="/register/suppliers" element={<Suppliers/>} />
             <Route path="/register/products" element={<Products/>} />

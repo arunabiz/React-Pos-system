@@ -67,7 +67,7 @@ const sidebar_items = [
     // },
     {
         "display_name": "Brands",
-        "route": "/products/brands",
+        "route": "/products/Brand",
         "icon": "bx bx-notepad"
     },
     {
