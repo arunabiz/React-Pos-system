@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState,useEffect} from 'react'
 // eslint-disable-next-line no-unused-vars
 import Sidebar from "../../components/sidebar/Sidebar";
 import TopNav from "../../components/topnav/TopNav";
@@ -6,6 +6,7 @@ import "../../assets/css/salereport.css";
 import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
+import Form from 'react-bootstrap/Form';
 import {DataGrid} from "@material-ui/data-grid";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
@@ -51,6 +52,8 @@ const useStyles = makeStyles({
 const Salereport = () => {
     const [value, setValue] = React.useState(0);
 
+    const [dateOfFrom,setdateOfFrom] = useState()
+    const [dateOfTo,setdateOfTo] = useState()
 
     const columns = [
         { field: 'id', headerName: 'ID', width: 90 },
@@ -70,6 +73,13 @@ const Salereport = () => {
             width: 250,
         },
     ];
+
+    const updatedateOfFrom = (e) => {
+        setdateOfFrom(e.target.value);
+    }
+    const updatedateOfTo = (e) => {
+        setdateOfTo(e.target.value);
+    }
 
     const rows = [
         {
@@ -141,74 +151,114 @@ const Salereport = () => {
                                         <div>
                                             <h2 className="brandtitle">Sale Report</h2>
                                             <form onSubmit="#">
-                                                <div className="row mx-0">
+                                                <div className="row mb-5">
                                                     <div className="col-4">
                                                         <div className="rowcustomer">
                                                             <label>From Date :</label>
-                                                            <input type="date" autoFocus placeholder="" value="#" required/>
+                                                            <Form.Control type="date" value={dateOfFrom} name={"dateOfFrom"} onChange={(event) => updatedateOfFrom(event)} required="required"/>
                                                         </div>
                                                     </div>
                                                     <div className="col-4">
                                                         <div className="rowcustomer">
                                                             <label>To Date:</label>
-                                                            <input type="date" autoFocus placeholder="" value="#" required/>
+                                                            <Form.Control type="date" value={dateOfTo} name={"dateOfTo"} onChange={(event) => updatedateOfTo(event)} required="required"/>
                                                         </div>
                                                     </div>
                                                     <div className="col-4">
                                                         <div id="button" className="rowbrandsbutton">
-                                                            <button  type="submit" className="btn mx-2">Filter</button>
-                                                            <button type="submit" className="btn">Clear</button>
+                                                            <button type="submit" className="btn mx-2 btn-success">Filter</button>
+                                                            <button type="submit" className="btn btn-warning">Clear</button>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
                                             </form>
 
-
-
                                             <div className="row ">
-                                                    <div className="col-3">
-                                                        <div className="info-box">
-                                                            <div className="info-box-icon bg-navy"><i className="fa fa-money"></i></div>
-
-                                                            <div className="info-box-content">
-                                                                <div className="info-box-text">Total Sale Profit</div>
-                                                                <div className="info-box-number">Rs.&nbsp;650</div>
-                                                            </div>
+                                                <div className="col-3">
+                                                    <div className="info-box">
+                                                        <span className="info-box-icon bg-navy">
+                                                            <i className="bx bxs-cart text-white" width="55" height="55"></i>
+                                                        </span>
+                                                        <div className="info-box-content">
+                                                            <span className="info-box-text">Total Sale Profit</span>
+                                                            <span className="info-box-number">Rs.&nbsp;650</span>
                                                         </div>
                                                     </div>
-                                                    <div className="col-3">
-                                                        <div className="info-box">
-                                                            <div className="info-box-icon bg-navy"><i className="fa fa-money"></i></div>
-
-                                                            <div className="info-box-content">
-                                                                <div className="info-box-text">Total Sale Profit</div>
-                                                                <div className="info-box-number">Rs.&nbsp;650</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="col-3">
-                                                        <div className="info-box">
-                                                            <div className="info-box-icon bg-navy"><i className="fa fa-money"></i></div>
-
-                                                            <div className="info-box-content">
-                                                                <div className="info-box-text">Total Sale Profit</div>
-                                                                <div className="info-box-number">Rs.&nbsp;650</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="col-3">
-                                                        <div className="info-box">
-                                                            <div className="info-box-icon bg-navy"><i className="fa fa-money"></i></div>
-
-                                                            <div className="info-box-content">
-                                                                <div className="info-box-text">Total Sale Profit</div>
-                                                                <div className="info-box-number">Rs.&nbsp;650</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    
                                                 </div>
+                                                <div className="col-3">
+                                                    <div className="info-box">
+                                                        <span className="info-box-icon bg-navy">
+                                                            <i className="bx bx-money text-white" width="24" height="24"></i>
+                                                        </span>
+                                                        <div className="info-box-content">
+                                                            <span className="info-box-text">Total Sale Profit</span>
+                                                            <span className="info-box-number">Rs.&nbsp;650</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="col-3">
+                                                    <div className="info-box">
+                                                        <span className="info-box-icon bg-navy">
+                                                            <i className="bx bx-money text-white" width="24" height="24"></i>
+                                                        </span>
+                                                        <div className="info-box-content">
+                                                            <span className="info-box-text">Total Sale Profit</span>
+                                                            <span className="info-box-number">Rs.&nbsp;650</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="col-3">
+                                                    <div className="info-box">
+                                                        <span className="info-box-icon bg-navy">
+                                                            <i className="bx bx-money text-white" width="24" height="24"></i>
+                                                        </span>
+                                                        <div className="info-box-content">
+                                                            <span className="info-box-text">Total Sale Profit</span>
+                                                            <span className="info-box-number">Rs.&nbsp;650</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="row">
+                                                <div className="  col-md-12 col-xs-12">
+                                                    <div className="info-box"></div>
+                                                </div>
+                                            </div>
+                                            <div className="row justify-content-center">
+                                                <div className="col-md-3 col-xs-4">
+                                                    <div className="info-box">
+                                                        <span className="info-box-icon bg-teal">
+                                                            <i className="bx bx-money text-white" width="24" height="24"></i>
+                                                        </span>
+                                                        <div className="info-box-content">
+                                                            <span className="info-box-text">Total Revenue</span>
+                                                            <span className="info-box-number">Rs. &nbsp;75,282</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="col-md-3 col-xs-4">
+                                                    <div className="info-box">
+                                                        <span className="info-box-icon bg-teal">
+                                                            <i className="bx bx-money text-white" width="24" height="24"></i>
+                                                        </span>
+                                                        <div className="info-box-content">
+                                                            <span className="info-box-text">Total Cost</span>
+                                                            <span className="info-box-number">Rs. &nbsp;308,004</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="col-md-3 col-xs-4">
+                                                    <div className="info-box">
+                                                        <span className="info-box-icon bg-teal">
+                                                            <i className="bx bx-money text-white" width="24" height="24"></i>
+                                                        </span>
+                                                        <div className="info-box-content">
+                                                            <span className="info-box-text">Total Profit</span>
+                                                            <span className="info-box-number">Rs. &nbsp;-232,722</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
         
