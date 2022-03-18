@@ -91,12 +91,7 @@ const sidebar_items = [
         "icon": "bx bx-note"
     },
     {
-        "display_name": "Sale Report",
-        "route": "/Sales/sales",
-        "icon": "bx bx-book"
-    },
-    {
-        "display_name": "Return and Damage Items",
+        "display_name": "Return & Damage Items",
         "route": "/products/return",
         "icon": "bx bx-no-entry"
     },
@@ -104,6 +99,16 @@ const sidebar_items = [
         "display_name": "Quotations",
         "route": "/billing/quotations",
         "icon": "bx bx-notepad"
+    },
+    {
+        "display_name": "Sale Report",
+        "route": "/sales/sales",
+        "icon": "bx bx-book"
+    },
+    {
+        "display_name": "Inventory Report",
+        "route": "/inventory/inventory",
+        "icon": "bx bx-book"
     },
 
 ]

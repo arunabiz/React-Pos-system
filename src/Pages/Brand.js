@@ -46,7 +46,7 @@ const Brands = () => {
         console.log(formField)
         await axios({
             method:'post',
-            url:'https://posautotest.herokuapp.com/api/brand/register/',
+            url:'https://127.0.0.1:8000/api/brand/register/',
             data:formField
         })
             .then((response)=>{

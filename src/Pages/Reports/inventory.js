@@ -54,7 +54,7 @@ const useStyles = makeStyles({
 });
 
 
-const Salereport = () => {
+const Inventoryreport = () => {
     const [value, setValue] = React.useState(0);
 
     const [dateOfFrom,setdateOfFrom] = useState()
@@ -173,8 +173,8 @@ const Salereport = () => {
 
                                     }
                                 }} value={value} onChange={handletab}>
-                                    <Tab label={<div className="customertab"><i className='bx bxs-duplicate'></i>Sale Report</div>} {...a11yProps(0)} />
-                                    <Tab label={<div className="customertab"><i className="bx bxs-note"></i>Sale Details</div>} {...a11yProps(1)} />
+                                    <Tab label={<div className="customertab"><i className='bx bxs-duplicate'></i>Inventory Report</div>} {...a11yProps(0)} />
+                                    <Tab label={<div className="customertab"><i className="bx bxs-note"></i>Inventory Details</div>} {...a11yProps(1)} />
                                 </Tabs>
                             </AppBar>
                         </div>
@@ -186,7 +186,7 @@ const Salereport = () => {
 
                                     <div className="card full-height">
                                         <div>
-                                            <h2 className="brandtitle">Sale Report</h2>
+                                            <h2 className="brandtitle">Inventory Report</h2>
                                             <form onSubmit="#">
                                                 <div className="row mb-5">
                                                     <div className="col-4">
@@ -366,4 +366,4 @@ const Salereport = () => {
   )
 }
 
-export default Salereport
+export default Inventoryreport

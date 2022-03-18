@@ -77,7 +77,7 @@ const Suppliers = () => {
     }
 
     useEffect(() => {
-        axios.get('https://posautotest.herokuapp.com/api/supplier/get/').then((response) => {
+        axios.get('http://127.0.0.1:8000/api/supplier/get/').then((response) => {
             setSuppliers(response.data.data);
         });
 
@@ -86,7 +86,7 @@ const Suppliers = () => {
     const submit =(e) =>{
         e.preventDefault();
 
-        axios.post('http://posautotest.herokuapp.com/api/supplier/register/', {
+        axios.post('http://127.0.0.1:8000/api/supplier/register/', {
             supplierName: Name,
             supplierContact: Contact,
             supplierAddress: Address,

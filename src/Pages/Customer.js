@@ -207,6 +207,35 @@ const Customer = () => {
         },
     ];
 
+    const rows = [
+        {
+            "id": 1,
+            "firstName": "mujeeb",
+            "lastName": "singham",
+            "email": "chandulagayan@gmail.com",
+            "verificationtoken": "1234",
+            "epfNo": null,
+            "phoneNo": "0776465645",
+            "image": null,
+            "statusId": 1,
+            "password": "$2y$10$zrrjILLqTKyxYiR3jrOdvuaE.tEG3U148gVPoe7zYQLpitytXpyU2 ",
+            "createdAt": "2021-07-16T10:38:11.002Z",
+            "updatedAt": "2021-07-16T10:38:11.002Z",
+        },
+        {
+            "id": 9,
+            "firstName": "Gayath",
+            "lastName": "Chandula",
+            "email": "chandulagayan1@gmail.com",
+            "verificationtoken": "g96wx6",
+            "epfNo": "47586598",
+            "phoneNo": null,
+            "image": "uploads/dashboard.JPG-1626512057383.jpeg",
+            "statusId": 50,
+            "password": "$2b$10$vqy4Pln0C.V88NOCdpOOFOKZYHbVGWv.yV/7XLn7cpYxLQnV2PzPi",
+        }
+    ];
+
 
     const handletab = (event, newValue) => {
         setValue(newValue);
@@ -356,21 +385,20 @@ const Customer = () => {
                                     </div>
                                     </div>
                                 </TabPanel>
+
                                 <TabPanel value={value} index={1}>
                                     <div className="row">
                                         <div className="col-12">
                                             <div className="card full-height">
                                                 <div style={{ height: 400, width: '100%'}}>
                                                     <DataGrid
-                                                        theme={useStyles}
-                                                        rows={Customers}
-                                                        columns={columns}
-                                                        pageSize={10}
-                                                        components={{
-                                                            Toolbar: CustomToolbar,
-                                                        }}
-                                                        // checkboxSelection
-                                                        // disableSelectionOnClick
+                                                          theme={useStyles}
+                                                          rows={rows}
+                                                          columns={columns}
+                                                          pageSize={10}
+                                                          components={{
+                                                              Toolbar: CustomToolbar,
+                                                          }}
                                                         // onSelectionModelChange={(e) => {
                                                         //     const selectedIDs = new Set(e.selectionModel);
                                                         //     const selectedRowData = listData1.lists.filter((row) =>
