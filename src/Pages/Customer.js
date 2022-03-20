@@ -275,7 +275,7 @@ const Customer = () => {
                                 <TabPanel value={value} index={0}>
                                     <div className="card full-height">
                                     <div>
-                                        <h2 className="customertitle">Brand Details</h2>
+                                        <h2 className="customertitle">Customer Details</h2>
                                         <form  onSubmit={submit}>
                                             <div className="row">
                                                 {formSuccess ? (
@@ -312,7 +312,7 @@ const Customer = () => {
                                             <br/>
                                             <br/>
                                             <br/>
-                                            <h2 className="customertitle">Brand Details</h2>
+                                            <h2 className="customertitle">Vehicle Details</h2>
                                             <div className="row">
                                                 <div className="col-6">
                                                     <div className="rowcustomer">

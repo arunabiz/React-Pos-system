@@ -101,7 +101,7 @@ const Brands = () => {
                                                     required/>
                                         </div>
                                         <div className="rowbrands">
-                                            <label>Name</label>
+                                            <label>Brand ID</label>
                                             <input type="text" autoFocus placeholder="" value="#"
                                                    required/>
                                         </div>
