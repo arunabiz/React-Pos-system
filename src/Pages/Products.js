@@ -182,7 +182,7 @@ const Products = () => {
     const submit =(e) =>{
         e.preventDefault();
 
-        axios.post('https://127.0.0.1:8000/api/product/register/', {
+        axios.post('http://127.0.0.1:8000/api/product/register/', {
             supplier: Supplier,
             input
         })

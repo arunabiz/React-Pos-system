@@ -40,19 +40,24 @@ const Brands = () => {
         });
     }, [status]);
 
-    const submit =async() =>{
-        let formField = new FormData()
-        formField.append('name',Name)
-        console.log(formField)
-        await axios({
-            method:'post',
-            url:'https://127.0.0.1:8000/api/brand/register/',
-            data:formField
+    const submit =(e) =>{
+        e.preventDefault();
+
+        axios.post('http://127.0.0.1:8000/api/brand/register/', {
+            name: Name
         })
-            .then((response)=>{
-                console.log(response.data);
-                // history.push('/')
+            .then(function (response) {
+                console.log(response);
+                setformError(false);
+                setformSuccess(true);
+                setstatus(true)
             })
+            .catch(function (error) {
+                console.log(error);
+                setformError(true);
+                setformSuccess(false);
+                seterror(error);
+            });
     }
 
     const columns = [

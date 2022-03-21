@@ -82,13 +82,13 @@ const InvoiceForm = (props) => {
 
         // Update the document title using the browser API
         document.title = `Invoices`;
-        axios.get('https://posautotest.herokuapp.com/api/customer/get/').then((response) => {
+        axios.get('http://127.0.0.1:8000/api/customer/get/').then((response) => {
             setCustomers(response.data.data);
         });
-        axios.get('https://posautotest.herokuapp.com/api/product/get/part/').then((response) => {
+        axios.get('http://127.0.0.1:8000/api/product/get/part/').then((response) => {
             setParts(response.data.data);
         });
-        axios.get('https://posautotest.herokuapp.com/api/product/get/service/').then((response) => {
+        axios.get('http://127.0.0.1:8000/api/product/get/service/').then((response) => {
             setservice(response.data.data);
         });
         // handleCalculateTotal();

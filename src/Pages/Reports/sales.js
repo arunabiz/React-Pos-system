@@ -61,6 +61,8 @@ const Salereport = () => {
     const [dateOfTo,setdateOfTo] = useState()
     const [status,setstatus] = useState(false)
 
+    const[sales, setsales] = useState([])
+
     const[formError, setformError] = useState()
     const[formSuccess, setformSuccess] = useState()
     const[error, seterror] = useState()
@@ -75,78 +77,21 @@ const Salereport = () => {
     }
 
 
+    
+
     const submit =(e) =>{
         e.preventDefault();
 
-        axios.post('http://127.0.0.1:8000/api/customer/register/', {
+        axios.post('http://127.0.0.1:8000/api/invoice/get/', {
             dateOffrom: dateOfFrom,
             dateOfto: dateOfTo,
-        })
-            .then(function (response) {
-                console.log(response);
-                setformError(false);
-                setformSuccess(true);
-                setstatus(true)
-            })
-            .catch(function (error) {
-                console.log(error);
-                setformError(true);
-                setformSuccess(false);
-                seterror(error);
-            });
+        }, [status])
+        .then((response) => {
+            setsales(response.data.data);
+        });
     }
 
-    const columns = [
-        { field: 'id', headerName: 'ID', width: 90 },
-        {
-            field: 'Name',
-            headerName: 'Name',
-            width: 200,
-        },
-        {
-            field: 'ContactNo',
-            headerName: 'Contact No.',
-            width: 150,
-        },
-        {
-            field: 'Action',
-            headerName: 'action',
-            width: 250,
-        },
-    ];
-
-    
-
-    const rows = [
-        {
-            "id": 1,
-            "firstName": "mujeeb",
-            "lastName": "singham",
-            "email": "chandulagayan@gmail.com",
-            "verificationtoken": "1234",
-            "epfNo": null,
-            "phoneNo": "0776465645",
-            "image": null,
-            "statusId": 1,
-            "password": "$2y$10$zrrjILLqTKyxYiR3jrOdvuaE.tEG3U148gVPoe7zYQLpitytXpyU2 ",
-            "createdAt": "2021-07-16T10:38:11.002Z",
-            "updatedAt": "2021-07-16T10:38:11.002Z",
-        },
-        {
-            "id": 9,
-            "firstName": "Gayath",
-            "lastName": "Chandula",
-            "email": "chandulagayan1@gmail.com",
-            "verificationtoken": "g96wx6",
-            "epfNo": "47586598",
-            "phoneNo": null,
-            "image": "uploads/dashboard.JPG-1626512057383.jpeg",
-            "statusId": 50,
-            "password": "$2b$10$vqy4Pln0C.V88NOCdpOOFOKZYHbVGWv.yV/7XLn7cpYxLQnV2PzPi",
-        }
-    ];
-
-
+   
     const handletab = (event, newValue) => {
         setValue(newValue);
     };
@@ -174,7 +119,7 @@ const Salereport = () => {
                                     }
                                 }} value={value} onChange={handletab}>
                                     <Tab label={<div className="customertab"><i className='bx bxs-duplicate'></i>Sale Report</div>} {...a11yProps(0)} />
-                                    <Tab label={<div className="customertab"><i className="bx bxs-note"></i>Sale Details</div>} {...a11yProps(1)} />
+                                    {/* <Tab label={<div className="customertab"><i className="bx bxs-note"></i>Sale Details</div>} {...a11yProps(1)} /> */}
                                 </Tabs>
                             </AppBar>
                         </div>
@@ -187,7 +132,7 @@ const Salereport = () => {
                                     <div className="card full-height">
                                         <div>
                                             <h2 className="brandtitle">Sale Report</h2>
-                                            <form onSubmit="#">
+                                            <form onSubmit={submit}>
                                                 <div className="row mb-5">
                                                     <div className="col-4">
                                                         <div className="rowcustomer">
@@ -297,65 +242,13 @@ const Salereport = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <Table className="mb-0">
-                                            <thead>
-                                            <tr>
-                                                <th>Product</th>
-                                                <th>Customer</th>
-                                                <th className="text-end">Seller </th>
-                                                <th className="text-end">Date</th>
-                                                <th className="text-end">Total</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            {/* {props.items.map((item, i) => {
-                                                return (
-                                                    <tr id={i} key={i}>
-                                                        <td style={{width: '70px'}}>
-                                                            {item.quantity}
-                                                        </td>
-                                                        <td>
-                                                            {item.name} - {item.description}
-                                                        </td>
-                                                        <td className="text-end" style={{width: '130px'}}>{props.currency} {item.price}</td>
-                                                        <td className="text-end" style={{width: '130px'}}>{props.currency} {item.price * item.quantity}</td>
-                                                    </tr>
-                                                );
-                                            })} */}
-                                            </tbody>
-                                        </Table>
+                                        
                                     </div>
         
 
                         </TabPanel>
                         
-                        <TabPanel value={value} index={1}>
-                            <div className="row">
-                                <div className="col-12">
-                                    <div className="card full-height">
-                                        <div style={{ height: 400, width: '100%'}}>
-                                            <DataGrid
-                                                theme={useStyles}
-                                                rows={rows}
-                                                columns={columns}
-                                                pageSize={5}
-                                                // checkboxSelection
-                                                disableSelectionOnClick
-                                                // onSelectionModelChange={(e) => {
-                                                //     const selectedIDs = new Set(e.selectionModel);
-                                                //     const selectedRowData = listData1.lists.filter((row) =>
-                                                //         selectedIDs.has(row.id)
-                                                //     );
-                                                //     setemailreceipents(selectedRowData)
-                                                //     console.log("selected rowData:", selectedRowData);
-                                                // }}
-                                                // selectionModel={selectionModel}
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </TabPanel>
+                    
                     </div>
                 </div>
             </div>
