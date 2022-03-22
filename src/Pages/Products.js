@@ -83,17 +83,28 @@ const Products = () => {
 
 
     useEffect(() => {
-        axios.get('https://127.0.0.1:8000/api/brand/get/').then((response) => {
+        axios.get('http://127.0.0.1:8000/api/brand/get/').then((response) => {
             setbrands(response.data.data);
         });
-        axios.get('https://127.0.0.1:8000/api/supplier/get/').then((response) => {
+        axios.get('http://127.0.0.1:8000/api/supplier/get/').then((response) => {
             setsuppliers(response.data.data);
         });
-        axios.get('https://127.0.0.1:8000/api/product/get/').then((response) => {
+        axios.get('http://127.0.0.1:8000/api/product/get/').then((response) => {
             setproducts(response.data.data);
+            console.log(response.data.data);
         });
     }, [status]);
-
+    // brand: 1
+    // id: 1
+    // productName: "Headlight"
+    // producttype: "Part"
+    // profitMargin: 0.65
+    // purchPrice: "650.00"
+    // quantity: 49
+    // sellingPrice: "715.00"
+    // supplier: 1
+    // totalCost: 31850
+    // totalProft: 3185
     const columns = [
         { field: 'id', headerName: 'ID', width: 90 },
         {
@@ -132,9 +143,6 @@ const Products = () => {
             width: 250,
         },
     ];
-
-
-
 
     const handletab = (event, newValue) => {
         setValue(newValue);

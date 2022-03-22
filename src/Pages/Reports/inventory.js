@@ -210,15 +210,15 @@ const Inventoryreport = () => {
                                                 </div>
                                             </form>
 
-                                            <div className="row ">
+                                            <div className="row justify-content-center">
                                                 <div className="col-3">
                                                     <div className="info-box">
                                                         <span className="info-box-icon bg-navy">
                                                             <i className="bx bxs-cart text-white" width="55" height="55"></i>
                                                         </span>
                                                         <div className="info-box-content">
-                                                            <span className="info-box-text">Total Sale Profit</span>
-                                                            <span className="info-box-number">Rs.&nbsp;650</span>
+                                                            <span className="info-box-text">Total Inventory</span>
+                                                            <span className="info-box-number">0</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -228,8 +228,8 @@ const Inventoryreport = () => {
                                                             <i className="bx bx-money text-white" width="24" height="24"></i>
                                                         </span>
                                                         <div className="info-box-content">
-                                                            <span className="info-box-text">Total Sale Profit</span>
-                                                            <span className="info-box-number">Rs.&nbsp;650</span>
+                                                            <span className="info-box-text">Total Sale </span>
+                                                            <span className="info-box-number">Rs.0</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -239,22 +239,12 @@ const Inventoryreport = () => {
                                                             <i className="bx bx-money text-white" width="24" height="24"></i>
                                                         </span>
                                                         <div className="info-box-content">
-                                                            <span className="info-box-text">Total Sale Profit</span>
-                                                            <span className="info-box-number">Rs.&nbsp;650</span>
+                                                            <span className="info-box-text">Total Sale Cost</span>
+                                                            <span className="info-box-number">Rs.0</span>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div className="col-3">
-                                                    <div className="info-box">
-                                                        <span className="info-box-icon bg-navy">
-                                                            <i className="bx bx-money text-white" width="24" height="24"></i>
-                                                        </span>
-                                                        <div className="info-box-content">
-                                                            <span className="info-box-text">Total Sale Profit</span>
-                                                            <span className="info-box-number">Rs.&nbsp;650</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                
                                             </div>
                                             <div className="row ">
                                                 <div className="  col-md-12 col-xs-12">
@@ -268,7 +258,7 @@ const Inventoryreport = () => {
                                                             <i className="bx bx-money text-white" width="24" height="24"></i>
                                                         </span>
                                                         <div className="info-box-content">
-                                                            <span className="info-box-text">Total Revenue</span>
+                                                            <span className="info-box-text">Total Income</span>
                                                             <span className="info-box-number">Rs. &nbsp;75,282</span>
                                                         </div>
                                                     </div>
@@ -279,12 +269,12 @@ const Inventoryreport = () => {
                                                             <i className="bx bx-money text-white" width="24" height="24"></i>
                                                         </span>
                                                         <div className="info-box-content">
-                                                            <span className="info-box-text">Total Cost</span>
+                                                            <span className="info-box-text">Total Service Chages</span>
                                                             <span className="info-box-number">Rs. &nbsp;308,004</span>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div className="col-md-3 col-xs-4">
+                                                {/* <div className="col-md-3 col-xs-4">
                                                     <div className="info-box">
                                                         <span className="info-box-icon bg-teal">
                                                             <i className="bx bx-money text-white" width="24" height="24"></i>
@@ -294,7 +284,7 @@ const Inventoryreport = () => {
                                                             <span className="info-box-number">Rs. &nbsp;-232,722</span>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> */}
                                             </div>
                                         </div>
                                         <Table className="mb-0">

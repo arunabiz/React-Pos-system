@@ -80,7 +80,7 @@ const Customer = () => {
     const[formSuccess, setformSuccess] = useState()
     const[error, seterror] = useState()
 
-    const[Customers, setCustomers] = useState([])
+    const[customers, setcustomers] = useState([])
 
     const updateName = (e) => {
         setName(e.target.value);
@@ -114,16 +114,6 @@ const Customer = () => {
         setCNumber(e.target.value);
     }
 
-    useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/customer/get/').then((response) => {
-            setCustomers(response.data.data);
-        });
-
-    }, [status]);
-
-
-
-
     const submit =(e) =>{
         e.preventDefault();
 
@@ -152,6 +142,14 @@ const Customer = () => {
                 seterror(error);
             });
     }
+
+    useEffect(() => {
+        axios.get('http://127.0.0.1:8000/api/customer/get/').then((response) => {
+            setcustomers(response.data.data);
+            // console.log(setcustomers);
+        });
+
+    }, [status]);
 
     const columns = [
         { field: 'id', headerName: 'ID', width: 90 },
@@ -206,36 +204,6 @@ const Customer = () => {
             width: 250,
         },
     ];
-
-    const rows = [
-        {
-            "id": 1,
-            "firstName": "mujeeb",
-            "lastName": "singham",
-            "email": "chandulagayan@gmail.com",
-            "verificationtoken": "1234",
-            "epfNo": null,
-            "phoneNo": "0776465645",
-            "image": null,
-            "statusId": 1,
-            "password": "$2y$10$zrrjILLqTKyxYiR3jrOdvuaE.tEG3U148gVPoe7zYQLpitytXpyU2 ",
-            "createdAt": "2021-07-16T10:38:11.002Z",
-            "updatedAt": "2021-07-16T10:38:11.002Z",
-        },
-        {
-            "id": 9,
-            "firstName": "Gayath",
-            "lastName": "Chandula",
-            "email": "chandulagayan1@gmail.com",
-            "verificationtoken": "g96wx6",
-            "epfNo": "47586598",
-            "phoneNo": null,
-            "image": "uploads/dashboard.JPG-1626512057383.jpeg",
-            "statusId": 50,
-            "password": "$2b$10$vqy4Pln0C.V88NOCdpOOFOKZYHbVGWv.yV/7XLn7cpYxLQnV2PzPi",
-        }
-    ];
-
 
     const handletab = (event, newValue) => {
         setValue(newValue);
@@ -393,7 +361,7 @@ const Customer = () => {
                                                 <div style={{ height: 400, width: '100%'}}>
                                                     <DataGrid
                                                           theme={useStyles}
-                                                          rows={rows}
+                                                          rows={customers}
                                                           columns={columns}
                                                           pageSize={10}
                                                           components={{
