@@ -146,7 +146,6 @@ const Customer = () => {
     useEffect(() => {
         axios.get('http://127.0.0.1:8000/api/customer/get/').then((response) => {
             setcustomers(response.data.data);
-            // console.log(setcustomers);
         });
 
     }, [status]);

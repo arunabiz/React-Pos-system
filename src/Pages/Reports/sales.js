@@ -77,7 +77,7 @@ const Salereport = () => {
     const[total_cost, settotalCost] = useState(0)
     const[total_profit, settotalProfit] = useState(0)
 
-    const[invoice, setInvoice] = useState()
+    const[invoice, setInvoice] = useState([])
     
 
 
@@ -105,12 +105,12 @@ const Salereport = () => {
             setsaleCost(response.data.data.total_sale_cost)
             settotalValue(response.data.data.total_transaction)
             setsaleProfit(response.data.data.total_profit)
-            setInvoice(response.data.invoice)
+            setInvoice(response.data.data.invoice)
             // settotalValue(response.data.data.total_profit)
             // settotalValue(response.data.data.total_profit)
             // this.total_profit = response.data.data.total_profit;
             // setsales(response.data.data);
-            console.log(response.data.invoice);
+            console.log(response.data.data);
 
         });
 
@@ -119,33 +119,23 @@ const Salereport = () => {
     const columns = [
         { field: 'id', headerName: 'ID', width: 90 },
         {
-            field: 'productName',
-            headerName: 'Product Name',
+            field: 'customer',
+            headerName: 'Customer',
             width: 200,
         },
         {
-            field: 'brand',
-            headerName: 'Brand',
+            field: 'dateCreated',
+            headerName: 'Date Created',
             width: 150,
         },
         {
-            field: 'producttype',
-            headerName: 'Product Type',
+            field: 'discount',
+            headerName: 'Discount',
             width: 150,
         },
         {
-            field: 'quantity',
-            headerName: 'Quantity',
-            width: 150,
-        },
-        {
-            field: 'purchPrice',
-            headerName: 'Purchase Price',
-            width: 150,
-        },
-        {
-            field: 'sellingPrice',
-            headerName: 'Selling Price',
+            field: 'totalAmount',
+            headerName: 'Total Amount',
             width: 150,
         },
         {
@@ -153,9 +143,9 @@ const Salereport = () => {
             headerName: 'action',
             width: 250,
         },
+
     ];
 
-   
     const handletab = (event, newValue) => {
         setValue(newValue);
     };
@@ -183,6 +173,7 @@ const Salereport = () => {
                                     }
                                 }} value={value} onChange={handletab}>
                                     <Tab label={<div className="customertab"><i className='bx bxs-duplicate'></i>Sale Report</div>} {...a11yProps(0)} />
+                                    <Tab label={<div className="customertab"><i className="bx bxs-note"></i>Sale Details</div>} {...a11yProps(1)} />
                                 </Tabs>
                             </AppBar>
                         </div>
@@ -305,38 +296,25 @@ const Salereport = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <Table className="mb-0">
-                                            <div className="row">
-                                                <div className="col-12">
-                                                    <div className="card full-height">
-                                                        <div style={{ height: 400, width: '100%'}}>
-                                                            <DataGrid
-                                                                // theme={useStyles}
-                                                                // rows={invoice}
-                                                                // columns={columns}
-                                                                // pageSize={5}
-                                                                // checkboxSelection
-                                                                //disableSelectionOnClick
-                                                                // onSelectionModelChange={(e) => {
-                                                                //     const selectedIDs = new Set(e.selectionModel);
-                                                                //     const selectedRowData = listData1.lists.filter((row) =>
-                                                                //         selectedIDs.has(row.id)
-                                                                //     );
-                                                                //     setemailreceipents(selectedRowData)
-                                                                //     console.log("selected rowData:", selectedRowData);
-                                                                // }}
-                                                                // selectionModel={selectionModel}
-                                                            />
-                                                        </div>
-                                                    </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-12">
+                                            <div className="card full-height">
+                                                <div style={{ height: 400, width: '100%'}}>
+                                                    <DataGrid
+                                                          theme={useStyles}
+                                                          rows={invoice }
+                                                          columns={columns}
+                                                          pageSize={10}
+                                                         
+                                                       
+                                                    />
                                                 </div>
                                             </div>
-                                        </Table>
+                                        </div>
                                     </div>
-        
-                                
-                        </TabPanel>
-                        
+
+                                </TabPanel>  
                     
                     </div>
                 </div>
