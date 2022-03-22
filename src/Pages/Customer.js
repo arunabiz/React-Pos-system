@@ -150,38 +150,14 @@ const Customer = () => {
         });
 
     }, [status]);
+    
 
     const columns = [
-        { field: 'id:1', headerName: 'ID', width: 90 },
+        { field: 'id', headerName: 'ID', width: 50 },
         {
             field: 'name',
-            headerName: 'Name',
+            headerName: 'Customer Name',
             width: 200,
-        },
-        {
-            field: 'contactNo',
-            headerName: 'Contact No.',
-            width: 150,
-        },
-        {
-            field: 'address',
-            headerName: 'Address',
-            width: 250,
-        },
-        {
-            field: 'vehicleName',
-            headerName: 'Vehicle Name',
-            width: 150  ,
-        },
-        {
-            field: 'vehicleNumber',
-            headerName: 'Vehicle Number',
-            width: 150,
-        },
-        {
-            field: 'vehicleBrand',
-            headerName: 'Vehicle Brand',
-            width: 150,
         },
         {
             field: 'vehicleModel',
@@ -189,20 +165,36 @@ const Customer = () => {
             width: 150,
         },
         {
+            field: 'contactNo',
+            headerName: 'Contact No.',
+            width: 100,
+        },
+        {
             field: 'vehicleColor',
             headerName: 'Vehicle Color',
             width: 100  ,
         },
         {
-            field: 'vehicleYear',
-            headerName: 'Vehicle Year',
+            field: 'vehicleNumber',
+            headerName: 'Vehicle No',
             width: 150,
+        },
+        {
+            field: 'vehicleName',
+            headerName: 'Vehicle Name',
+            width: 150  ,
         },
         {
             field: 'vehicleChassiNO',
             headerName: 'Vehicle ChassiNO',
             width: 250,
         },
+        {
+            field: 'address',
+            headerName: 'Customer Address',
+            width: 250,
+        },
+   
     ];
 
     const handletab = (event, newValue) => {

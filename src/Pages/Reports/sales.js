@@ -110,7 +110,7 @@ const Salereport = () => {
             // settotalValue(response.data.data.total_profit)
             // this.total_profit = response.data.data.total_profit;
             // setsales(response.data.data);
-            console.log(response.data.data);
+            console.log(response.data.invoice);
 
         });
 
@@ -183,7 +183,6 @@ const Salereport = () => {
                                     }
                                 }} value={value} onChange={handletab}>
                                     <Tab label={<div className="customertab"><i className='bx bxs-duplicate'></i>Sale Report</div>} {...a11yProps(0)} />
-                                    {/* <Tab label={<div className="customertab"><i className="bx bxs-note"></i>Sale Details</div>} {...a11yProps(1)} /> */}
                                 </Tabs>
                             </AppBar>
                         </div>
@@ -307,31 +306,31 @@ const Salereport = () => {
                                             </div>
                                         </div>
                                         <Table className="mb-0">
-                                            <thead>
-                                            <tr>
-                                                <th>Product</th>
-                                                <th>Customer</th>
-                                                <th className="text-end">Seller </th>
-                                                <th className="text-end">Date</th>
-                                                <th className="text-end">Total</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            {/* {props.invoice.map((invoice, i) => {
-                                                return (
-                                                    <tr id={i} key={i}>
-                                                        <td style={{width: '70px'}}>
-                                                            {invoice.buy_products}
-                                                        </td> */}
-                                                        {/* <td>
-                                                            {item.name} - {item.description}
-                                                        </td>
-                                                        <td className="text-end" style={{width: '130px'}}>{props.currency} {item.price}</td>
-                                                        <td className="text-end" style={{width: '130px'}}>{props.currency} {item.price * item.quantity}</td> */}
-                                                    {/* </tr>
-                                                );
-                                            })} */}
-                                            </tbody>
+                                            <div className="row">
+                                                <div className="col-12">
+                                                    <div className="card full-height">
+                                                        <div style={{ height: 400, width: '100%'}}>
+                                                            <DataGrid
+                                                                // theme={useStyles}
+                                                                // rows={invoice}
+                                                                // columns={columns}
+                                                                // pageSize={5}
+                                                                // checkboxSelection
+                                                                //disableSelectionOnClick
+                                                                // onSelectionModelChange={(e) => {
+                                                                //     const selectedIDs = new Set(e.selectionModel);
+                                                                //     const selectedRowData = listData1.lists.filter((row) =>
+                                                                //         selectedIDs.has(row.id)
+                                                                //     );
+                                                                //     setemailreceipents(selectedRowData)
+                                                                //     console.log("selected rowData:", selectedRowData);
+                                                                // }}
+                                                                // selectionModel={selectionModel}
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </Table>
                                     </div>
         
