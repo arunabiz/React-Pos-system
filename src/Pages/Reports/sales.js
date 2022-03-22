@@ -80,9 +80,6 @@ const Salereport = () => {
     const[invoice, setInvoice] = useState([])
     
 
-
-    // const[Customers, setCustomers] = useState([])
-
     const updatedateOfFrom = (e) => {
         setdateOfFrom(e.target.value);
     }
@@ -203,7 +200,7 @@ const Salereport = () => {
                                                     <div className="col-4">
                                                         <div id="button" className="rowbrandsbutton">
                                                             <button type="submit" className="btn mx-2 btn-success">Filter</button>
-                                                            <button type="submit" className="btn btn-warning">Clear</button>
+                                                            <button className="btn btn-warning">Clear</button>
                                                         </div>
                                                     </div>
                                                 </div>

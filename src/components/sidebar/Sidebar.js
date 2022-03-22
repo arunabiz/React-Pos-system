@@ -91,14 +91,14 @@ const sidebar_items = [
         "icon": "bx bx-note"
     },
     {
-        "display_name": "Return & Damage Items",
-        "route": "/products/return",
-        "icon": "bx bx-no-entry"
-    },
-    {
         "display_name": "Quotations",
         "route": "/billing/quotations",
         "icon": "bx bx-notepad"
+    },
+    {
+        "display_name": "Return & Damage Items",
+        "route": "/products/return",
+        "icon": "bx bx-no-entry"
     },
     {
         "display_name": "Sale Report",
