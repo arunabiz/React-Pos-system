@@ -152,7 +152,7 @@ const Customer = () => {
     }, [status]);
 
     const columns = [
-        { field: 'id', headerName: 'ID', width: 90 },
+        { field: 'id:1', headerName: 'ID', width: 90 },
         {
             field: 'name',
             headerName: 'Name',
