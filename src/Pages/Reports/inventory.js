@@ -66,14 +66,17 @@ const Inventoryreport = () => {
     const[error, seterror] = useState()
 
     const[total_transaction, settotalValue] = useState(0)
-    const[total_salerevenue, setsaleRevenue] = useState(0)
-    const[total_salecost, setsaleCost] = useState(0)
-    const[total_saleprofit, setsaleProfit] = useState(0)
-    const[total_revenue, settotalRevenue] = useState(0)
-    const[total_cost, settotalCost] = useState(0)
-    const[total_profit, settotalProfit] = useState(0)
 
-    const[invoice, setInvoice] = useState([])
+    const[total_salecost, setsaleCost] = useState(0)
+    const[total_income, settotalIncome] = useState(0)
+    const[total_inventory, setsaleInventory] = useState(0)
+    const[total_productcost, settotalProductCost] = useState(0)
+    const[total_productprofit, settotalProductsale] = useState(0)
+    const[service_chages, setserviceChages] = useState(0)
+   
+   
+
+    const[items, setItems] = useState([])
 
 
     const updatedateOfFrom = (e) => {
@@ -94,16 +97,18 @@ const Inventoryreport = () => {
         }, [status])
         .then((response) => {
   
-            // settotalValue(response.data.data.total_transaction)
-            // setsaleRevenue(response.data.data.total_sale)
-            // setsaleCost(response.data.data.total_sale_cost)
-            // settotalValue(response.data.data.total_transaction)
+            settotalIncome(response.data.data.total_income)
+            setsaleInventory(response.data.data.total_inventory)
+            settotalProductCost(response.data.data.total_product_cost)
+            settotalProductsale(response.data.data.total_product_sale)
+            setItems(response.data.data.items)
             // setsaleProfit(response.data.data.total_profit)
             // setInvoice(response.data.data.invoice)
             // settotalValue(response.data.data.total_profit)
             // settotalValue(response.data.data.total_profit)
             // this.total_profit = response.data.data.total_profit;
             // setsales(response.data.data);
+
             console.log(response.data.data);
 
         });
@@ -114,23 +119,33 @@ const Inventoryreport = () => {
     const columns = [
         { field: 'id', headerName: 'ID', width: 90 },
         {
-            field: 'customer',
-            headerName: 'Customer',
+            field: 'productName',
+            headerName: 'Product Name',
             width: 200,
         },
         {
-            field: 'dateCreated',
-            headerName: 'Date Created',
+            field: 'producttype',
+            headerName: 'Product Type',
             width: 150,
         },
         {
-            field: 'discount',
-            headerName: 'Discount',
+            field: 'brand',
+            headerName: 'Brand',
             width: 150,
         },
         {
-            field: 'totalAmount',
-            headerName: 'Total Amount',
+            field: 'supplier',
+            headerName: 'Supplier',
+            width: 150,
+        },
+        {
+            field: 'purchPrice',
+            headerName: 'Purch Price',
+            width: 150,
+        },
+        {
+            field: 'quantity',
+            headerName: 'QTY',
             width: 150,
         },
         {
@@ -138,7 +153,6 @@ const Inventoryreport = () => {
             headerName: 'action',
             width: 250,
         },
-
     ];
 
 
@@ -212,7 +226,7 @@ const Inventoryreport = () => {
                                                         </span>
                                                         <div className="info-box-content">
                                                             <span className="info-box-text">Total Inventory</span>
-                                                            <span className="info-box-number">0</span>
+                                                            <span className="info-box-number">{total_inventory}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -223,7 +237,7 @@ const Inventoryreport = () => {
                                                         </span>
                                                         <div className="info-box-content">
                                                             <span className="info-box-text">Total Sale </span>
-                                                            <span className="info-box-number">Rs.0</span>
+                                                            <span className="info-box-number">Rs.{total_productprofit}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -234,7 +248,7 @@ const Inventoryreport = () => {
                                                         </span>
                                                         <div className="info-box-content">
                                                             <span className="info-box-text">Total Sale Cost</span>
-                                                            <span className="info-box-number">Rs.0</span>
+                                                            <span className="info-box-number">Rs.{total_productcost}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -253,7 +267,7 @@ const Inventoryreport = () => {
                                                         </span>
                                                         <div className="info-box-content">
                                                             <span className="info-box-text">Total Income</span>
-                                                            <span className="info-box-number">Rs. &nbsp;75,282</span>
+                                                            <span className="info-box-number">Rs. {total_income}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -264,21 +278,11 @@ const Inventoryreport = () => {
                                                         </span>
                                                         <div className="info-box-content">
                                                             <span className="info-box-text">Total Service Chages</span>
-                                                            <span className="info-box-number">Rs. &nbsp;308,004</span>
+                                                            <span className="info-box-number">Rs. {service_chages}</span>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                {/* <div className="col-md-3 col-xs-4">
-                                                    <div className="info-box">
-                                                        <span className="info-box-icon bg-teal">
-                                                            <i className="bx bx-money text-white" width="24" height="24"></i>
-                                                        </span>
-                                                        <div className="info-box-content">
-                                                            <span className="info-box-text">Total Profit</span>
-                                                            <span className="info-box-number">Rs. &nbsp;-232,722</span>
-                                                        </div>
-                                                    </div>
-                                                </div> */}
+                                                
                                             </div>
                                         </div>
                                         <div className="row">
@@ -287,7 +291,7 @@ const Inventoryreport = () => {
                                                     <div style={{ height: 400, width: '100%'}}>
                                                         <DataGrid
                                                             theme={useStyles}
-                                                            rows={invoice}
+                                                            rows={items}
                                                             columns={columns}
                                                             pageSize={5}
                                                             // checkboxSelection

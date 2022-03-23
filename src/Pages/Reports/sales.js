@@ -78,7 +78,7 @@ const Salereport = () => {
     const[total_profit, settotalProfit] = useState(0)
 
     const[invoice, setInvoice] = useState([])
-    
+
 
     const updatedateOfFrom = (e) => {
         setdateOfFrom(e.target.value);
@@ -170,7 +170,6 @@ const Salereport = () => {
                                     }
                                 }} value={value} onChange={handletab}>
                                     <Tab label={<div className="customertab"><i className='bx bxs-duplicate'></i>Sale Report</div>} {...a11yProps(0)} />
-                                    <Tab label={<div className="customertab"><i className="bx bxs-note"></i>Sale Details</div>} {...a11yProps(1)} />
                                 </Tabs>
                             </AppBar>
                         </div>

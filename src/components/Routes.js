@@ -3,6 +3,7 @@ import React, {useState} from 'react'
 import {BrowserRouter, Redirect, Route, Switch,Routes,Navigate  } from 'react-router-dom'
 
 
+//import Logoing from '../Pages/login'
 import Dashboard from '../Pages/Dashboard'
 import Brands from "../Pages/Brand";
 import Customer from "../Pages/Customer";
