@@ -256,7 +256,7 @@ const Salereport = () => {
                                                     <div className="info-box"></div>
                                                 </div>
                                             </div>
-                                            <div className="row mb-5 justify-content-center">
+                                            {/* <div className="row mb-5 justify-content-center">
                                                 <div className="col-md-3 col-xs-4">
                                                     <div className="info-box">
                                                         <span className="info-box-icon bg-teal">
@@ -290,7 +290,7 @@ const Salereport = () => {
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </div>
                                     <div className="row">

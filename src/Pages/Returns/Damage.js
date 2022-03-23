@@ -130,6 +130,7 @@ const Damage = () => {
                                     }} value={value} onChange={handletab}>
                                         <Tab label={<div className="customertab"><i className='bx bxs-duplicate'></i>Product Returns</div>} {...a11yProps(0)} />
                                         <Tab label={<div className="customertab"><i className="bx bxs-note"></i>Return Details</div>} {...a11yProps(1)} />
+                                        <Tab label={<div className="customertab"><i className="bx bxs-note"></i>Damage Items</div>} {...a11yProps(2)} />
                                     </Tabs>
                                 </AppBar>
                             </div>
@@ -206,6 +207,33 @@ const Damage = () => {
                                 {/*</div>*/}
                             </TabPanel>
                             <TabPanel value={value} index={1}>
+                                <div className="row">
+                                    <div className="col-12">
+                                        <div className="card full-height">
+                                            <div style={{ height: 400, width: '100%'}}>
+                                                <DataGrid
+                                                    theme={useStyles}
+                                                    rows={rows}
+                                                    columns={columns}
+                                                    pageSize={5}
+                                                    // checkboxSelection
+                                                    disableSelectionOnClick
+                                                    // onSelectionModelChange={(e) => {
+                                                    //     const selectedIDs = new Set(e.selectionModel);
+                                                    //     const selectedRowData = listData1.lists.filter((row) =>
+                                                    //         selectedIDs.has(row.id)
+                                                    //     );
+                                                    //     setemailreceipents(selectedRowData)
+                                                    //     console.log("selected rowData:", selectedRowData);
+                                                    // }}
+                                                    // selectionModel={selectionModel}
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </TabPanel>
+                            <TabPanel value={value} index={2}>
                                 <div className="row">
                                     <div className="col-12">
                                         <div className="card full-height">
