@@ -36,7 +36,7 @@ const Brands = () => {
 
     useEffect(() => {
         axios.get('http://127.0.0.1:8000/api/brand/get/').then((response) => {
-            setbrands(response.data.data);
+            console.log(response.data);
         });
     }, [status]);
 
@@ -106,7 +106,7 @@ const Brands = () => {
                                                     required/>
                                         </div>
                                         <div className="rowbrands">
-                                            <label>Brand ID</label>
+                                            <label>Name</label>
                                             <input type="text" autoFocus placeholder="" value="#"
                                                    required/>
                                         </div>

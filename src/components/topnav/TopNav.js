@@ -99,7 +99,7 @@ const Topnav = () => {
     return (
         <div className='topnav'>
             <div className="user__company ">
-                <h1>Pos System</h1>
+                <h1>Equinox</h1>
             </div>
             {/*<div className="topnav__search">*/}
             {/*    <input type="text" placeholder='Search here...' />*/}

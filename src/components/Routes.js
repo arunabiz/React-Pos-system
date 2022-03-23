@@ -11,7 +11,8 @@ import Products from "../Pages/Products";
 import Invoices from "../Pages/Invoices/Invoices";
 import Quotations from "../Pages/Invoices/Quotations";
 import Damage from "../Pages/Returns/Damage";
-import Salereport from "../Pages/Sales/sales"
+import Salereport from "../Pages/Reports/sales";
+import Inventoryreport from "../Pages/Reports/inventory";
 
 
 
@@ -32,9 +33,11 @@ const Path = () => {
             <Route path="/register/suppliers" element={<Suppliers/>} />
             <Route path="/register/products" element={<Products/>} />
             <Route path="/billing/invoices" element={<Invoices/>} />
-            <Route path="/Sales/sales" element={<Salereport/>} />
             <Route path="/billing/quotations" element={<Quotations/>} />
             <Route path="/products/return" element={<Damage/>} />
+            <Route path="/sales/sales" element={<Salereport/>} />
+            <Route path="/inventory/inventory" element={<Inventoryreport/>} />
+
 
         </Routes>
 

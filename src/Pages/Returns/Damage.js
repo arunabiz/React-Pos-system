@@ -173,15 +173,13 @@ const Damage = () => {
                                                         <div className="col-6">
                                                             <div className="rowcustomer">
                                                                 <label>Return Quantity</label>
-                                                                <input type="number" autoFocus placeholder="" value="#" min="0"
-                                                                       required/>
+                                                                <input type="number" required/>
                                                             </div>
                                                         </div>
                                                         <div className="col-6">
                                                             <div className="rowcustomer">
-                                                                <label>Return Date</label>
-                                                                <input type="date" autoFocus placeholder="" value="#"
-                                                                       required/>
+                                                            <span className="fw-bold">Current&nbsp;Date:&nbsp;</span><br></br>
+                                                            <span className="current-date"  required>{new Date().toLocaleDateString()}</span> 
                                                             </div>
                                                         </div>
                                                     </div>

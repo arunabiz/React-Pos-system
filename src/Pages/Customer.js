@@ -80,7 +80,7 @@ const Customer = () => {
     const[formSuccess, setformSuccess] = useState()
     const[error, seterror] = useState()
 
-    const[Customers, setCustomers] = useState([])
+    const[customers, setcustomers] = useState([])
 
     const updateName = (e) => {
         setName(e.target.value);
@@ -114,20 +114,10 @@ const Customer = () => {
         setCNumber(e.target.value);
     }
 
-    useEffect(() => {
-        axios.get('https://posautotest.herokuapp.com/api/customer/get/').then((response) => {
-            setCustomers(response.data.data);
-        });
-
-    }, [status]);
-
-
-
-
     const submit =(e) =>{
         e.preventDefault();
 
-        axios.post('https://posautotest.herokuapp.com/api/customer/register/', {
+        axios.post('http://127.0.0.1:8000/api/customer/register/', {
             name: Name,
             contactNo: Contact,
             address: Address,
@@ -153,37 +143,20 @@ const Customer = () => {
             });
     }
 
+    useEffect(() => {
+        axios.get('http://127.0.0.1:8000/api/customer/get/').then((response) => {
+            setcustomers(response.data.data);
+        });
+
+    }, [status]);
+    
+
     const columns = [
-        { field: 'id', headerName: 'ID', width: 90 },
+        { field: 'id', headerName: 'ID', width: 50 },
         {
             field: 'name',
-            headerName: 'Name',
+            headerName: 'Customer Name',
             width: 200,
-        },
-        {
-            field: 'contactNo',
-            headerName: 'Contact No.',
-            width: 150,
-        },
-        {
-            field: 'address',
-            headerName: 'Address',
-            width: 250,
-        },
-        {
-            field: 'vehicleName',
-            headerName: 'Vehicle Name',
-            width: 150  ,
-        },
-        {
-            field: 'vehicleNumber',
-            headerName: 'Vehicle Number',
-            width: 150,
-        },
-        {
-            field: 'vehicleBrand',
-            headerName: 'Vehicle Brand',
-            width: 150,
         },
         {
             field: 'vehicleModel',
@@ -191,22 +164,37 @@ const Customer = () => {
             width: 150,
         },
         {
+            field: 'contactNo',
+            headerName: 'Contact No.',
+            width: 100,
+        },
+        {
             field: 'vehicleColor',
             headerName: 'Vehicle Color',
             width: 100  ,
         },
         {
-            field: 'vehicleYear',
-            headerName: 'Vehicle Year',
+            field: 'vehicleNumber',
+            headerName: 'Vehicle No',
             width: 150,
+        },
+        {
+            field: 'vehicleName',
+            headerName: 'Vehicle Name',
+            width: 150  ,
         },
         {
             field: 'vehicleChassiNO',
             headerName: 'Vehicle ChassiNO',
             width: 250,
         },
+        {
+            field: 'address',
+            headerName: 'Customer Address',
+            width: 250,
+        },
+   
     ];
-
 
     const handletab = (event, newValue) => {
         setValue(newValue);
@@ -246,7 +234,7 @@ const Customer = () => {
                                 <TabPanel value={value} index={0}>
                                     <div className="card full-height">
                                     <div>
-                                        <h2 className="customertitle">Brand Details</h2>
+                                        <h2 className="customertitle">Customer Details</h2>
                                         <form  onSubmit={submit}>
                                             <div className="row">
                                                 {formSuccess ? (
@@ -283,7 +271,7 @@ const Customer = () => {
                                             <br/>
                                             <br/>
                                             <br/>
-                                            <h2 className="customertitle">Brand Details</h2>
+                                            <h2 className="customertitle">Vehicle Details</h2>
                                             <div className="row">
                                                 <div className="col-6">
                                                     <div className="rowcustomer">
@@ -356,21 +344,20 @@ const Customer = () => {
                                     </div>
                                     </div>
                                 </TabPanel>
+
                                 <TabPanel value={value} index={1}>
                                     <div className="row">
                                         <div className="col-12">
                                             <div className="card full-height">
                                                 <div style={{ height: 400, width: '100%'}}>
                                                     <DataGrid
-                                                        theme={useStyles}
-                                                        rows={Customers}
-                                                        columns={columns}
-                                                        pageSize={10}
-                                                        components={{
-                                                            Toolbar: CustomToolbar,
-                                                        }}
-                                                        // checkboxSelection
-                                                        // disableSelectionOnClick
+                                                          theme={useStyles}
+                                                          rows={customers}
+                                                          columns={columns}
+                                                          pageSize={10}
+                                                          components={{
+                                                              Toolbar: CustomToolbar,
+                                                          }}
                                                         // onSelectionModelChange={(e) => {
                                                         //     const selectedIDs = new Set(e.selectionModel);
                                                         //     const selectedRowData = listData1.lists.filter((row) =>
