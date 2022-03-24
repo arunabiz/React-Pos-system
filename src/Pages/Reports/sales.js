@@ -216,7 +216,7 @@ const Salereport = () => {
                                                     <div className="col-4">
                                                         <div id="button" className="rowbrandsbutton">
                                                             <button type="submit" className="btn mx-2 btn-success">Filter</button>
-                                                            <button type="submit" className="btn btn-warning">Clear</button>
+                                                            <button type="button" className="btn btn-warning">Clear</button>
                                                             <Button variant="outline-primary" className="mx-2">
                                                                     Download
                                                             </Button>

@@ -211,9 +211,8 @@ const Inventoryreport = () => {
                                                     <div className="col-4">
                                                         <div id="button" className="rowbrandsbutton">
                                                             <button type="submit" className="btn mx-2 btn-success">Filter</button>
-                                                            <button className="btn btn-warning">Clear</button>
-                                                            <Button variant="outline-primary" className="d-block w-100 mt-3 mt-md-0">
-                                                                    {/* <BiCloudDownload style={{width: '16px', height: '16px', marginTop: '-3px'}} className="me-2"/> */}
+                                                            <button type='button' className="btn btn-warning">Clear</button>
+                                                            <Button variant="outline-primary" className="mx-2">
                                                                     Download
                                                             </Button>
                                                         </div>
