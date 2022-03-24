@@ -216,9 +216,8 @@ const Salereport = () => {
                                                     <div className="col-4">
                                                         <div id="button" className="rowbrandsbutton">
                                                             <button type="submit" className="btn mx-2 btn-success">Filter</button>
-                                                            <button className="btn btn-warning">Clear</button>
-                                                            <Button variant="outline-primary" className="d-block w-100 mt-3 mt-md-0">
-                                                                    {/* <BiCloudDownload style={{width: '16px', height: '16px', marginTop: '-3px'}} className="me-2"/> */}
+                                                            <button type="submit" className="btn btn-warning">Clear</button>
+                                                            <Button variant="outline-primary" className="mx-2">
                                                                     Download
                                                             </Button>
                                                         </div>
@@ -277,45 +276,6 @@ const Salereport = () => {
                                                     <div className="info-box"></div>
                                                 </div>
                                             </div>
-<<<<<<< Updated upstream
-    
-=======
-                                            {/* <div className="row mb-5 justify-content-center">
-                                                <div className="col-md-3 col-xs-4">
-                                                    <div className="info-box">
-                                                        <span className="info-box-icon bg-teal">
-                                                            <i className="bx bx-money text-white" width="24" height="24"></i>
-                                                        </span>
-                                                        <div className="info-box-content">
-                                                            <span className="info-box-text">Total Revenue</span>
-                                                            <span className="info-box-number">Rs.{total_salerevenue}</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="col-md-3 col-xs-4">
-                                                    <div className="info-box">
-                                                        <span className="info-box-icon bg-teal">
-                                                            <i className="bx bx-money text-white" width="24" height="24"></i>
-                                                        </span>
-                                                        <div className="info-box-content">
-                                                            <span className="info-box-text">Total Cost</span>
-                                                            <span className="info-box-number">Rs.{total_salecost}</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="col-md-3 col-xs-4">
-                                                    <div className="info-box">
-                                                        <span className="info-box-icon bg-teal">
-                                                            <i className="bx bx-money text-white" width="24" height="24"></i>
-                                                        </span>
-                                                        <div className="info-box-content">
-                                                            <span className="info-box-text">Total Profit</span>
-                                                            <span className="info-box-number">Rs.{total_saleprofit}</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div> */}
->>>>>>> Stashed changes
                                         </div>
                                         <div className="row">
                                             <div className="col-12">

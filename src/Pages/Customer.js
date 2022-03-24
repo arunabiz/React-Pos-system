@@ -283,17 +283,6 @@ const Customer = () => {
                                                     <label>Vehicle Brand *</label>
                                                         <input type="text" autoFocus placeholder="" value={VBrand} onChange={(e) => updateVBrand(e)}
                                                                required/>
-<<<<<<< Updated upstream
-                                                        {/* <label>Vehicle Brand *</label>
-                                                            <select id="department" name="department" value={VBrand} onChange={(e) => updateVBrand(e)} required>
-                                                                <option value="Toyota" selected>Toyota</option>
-                                                                <option value="Mazda" selected>Mazda</option>
-                                                                <option value="Honda" selected>Honda</option>
-                                                                <option value="Benz" selected>Benz</option>
-                                                                <option value="Bmw" selected>Bmw</option>
-                                                            </select> */}
-=======
->>>>>>> Stashed changes
                                                     </div>
                                                 </div>
                                                 <div className="col-6">
