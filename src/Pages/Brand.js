@@ -105,11 +105,11 @@ const Brands = () => {
                                             <input type="text" autoFocus placeholder="" value={Name} onChange={(e) => updateName(e)}
                                                     required/>
                                         </div>
-                                        <div className="rowbrands">
+                                        {/* <div className="rowbrands">
                                             <label>Brand ID</label>
                                             <input type="text" autoFocus placeholder="" value="#"
                                                    required/>
-                                        </div>
+                                        </div> */}
                                         {/*<div className="rowuser">*/}
                                         {/*    <label>Device Type</label>*/}
                                         {/*    <select id="department" name="department" value={deviceTypeId}*/}

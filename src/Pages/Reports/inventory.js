@@ -13,6 +13,7 @@ import {DataGrid} from "@material-ui/data-grid";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import {makeStyles} from "@material-ui/core/styles";
+import Button from 'react-bootstrap/Button';
 
 
 function TabPanel(props) {
@@ -211,6 +212,10 @@ const Inventoryreport = () => {
                                                         <div id="button" className="rowbrandsbutton">
                                                             <button type="submit" className="btn mx-2 btn-success">Filter</button>
                                                             <button className="btn btn-warning">Clear</button>
+                                                            <Button variant="outline-primary" className="d-block w-100 mt-3 mt-md-0">
+                                                                    {/* <BiCloudDownload style={{width: '16px', height: '16px', marginTop: '-3px'}} className="me-2"/> */}
+                                                                    Download
+                                                            </Button>
                                                         </div>
                                                     </div>
                                                 </div>
