@@ -217,9 +217,7 @@ const Salereport = () => {
                                                         <div id="button" className="rowbrandsbutton">
                                                             <button type="submit" className="btn mx-1 w-100 btn-success">Filter</button>
                                                             <button type="button" className="btn mx-1 w-100 btn-warning">Clear</button>
-                                                            <Button variant="outline-primary" className=" mx-1 w-100">
-                                                                    Download
-                                                            </Button>
+                                                            <Button variant="outline-primary" className=" mx-1 w-100"> Download </Button>
                                                         </div>
                                                     </div>
                                                 </div>
