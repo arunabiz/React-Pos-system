@@ -72,7 +72,7 @@ function Jobcard(props) {
 
     const postpdf = (payload) => {
         console.log(payload);
-        axios.post('https://posautotest.herokuapp.com/api/invoice/register/', payload, {
+        axios.post('http://127.0.0.1:8000/invoice/register/', payload, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }

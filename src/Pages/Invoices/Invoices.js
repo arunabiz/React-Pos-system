@@ -61,7 +61,7 @@ const Invoices = () => {
     const [open, setOpen] = useState(false)
 
     useEffect(() => {
-        axios.get('https://posautotest.herokuapp.com/api/invoice/get/').then((response) => {
+        axios.get('http://127.0.0.1:8000/api/invoice/get/').then((response) => {
             setinvoices(response.data.data);
         });
     }, [status]);
