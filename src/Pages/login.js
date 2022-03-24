@@ -1,9 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useRef, useState, useEffect, useContext } from 'react';
-import AuthContext from "./context/AuthProvider";
-
+import AuthContext from "../Pages/Context/AuthProvider.js";
 import axios from 'axios';
-const LOGIN_URL = newFunction();
+const LOGIN_URL = '/auth';
 
 const Login = () => {
     const { setAuth } = useContext(AuthContext);
@@ -92,13 +91,6 @@ const Login = () => {
                         />
                         <button>Sign In</button>
                     </form>
-                    <p>
-                        Need an Account?<br />
-                        <span className="line">
-                            {/*put router link here*/}
-                            <a href="#">Sign Up</a>
-                        </span>
-                    </p>
                 </section>
             )}
         </>

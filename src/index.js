@@ -5,10 +5,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './assets/fonts/SF-Pro-Text-Bold.otf';
 import './assets/fonts/SF-Pro-Display-Bold.OTF';
+import { AuthProvider } from './Pages/Context/AuthProvider';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AuthProvider>
+      <App />
+    </AuthProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
