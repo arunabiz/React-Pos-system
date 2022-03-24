@@ -97,11 +97,11 @@ const Salereport = () => {
         }, [status])
         .then((response) => {
   
-            settotalValue(response.data.data.total_transaction)
-            setsaleRevenue(response.data.data.total_sale)
-            setsaleCost(response.data.data.total_sale_cost)
-            settotalValue(response.data.data.total_transaction)
-            setsaleProfit(response.data.data.total_profit)
+            settotalValue(response.data.data.total_transaction);
+            setsaleRevenue(response.data.data.total_revenue);
+            setsaleCost(response.data.data.total_sale_cost);
+            settotalValue(response.data.data.total_transaction);
+            setsaleProfit(response.data.data.total_profit);
             setInvoice(response.data.data.invoice)
             // settotalValue(response.data.data.total_profit)
             // settotalValue(response.data.data.total_profit)
@@ -114,6 +114,7 @@ const Salereport = () => {
     }
 
     const columns = [
+
         { field: 'id', headerName: 'ID', width: 90 },
         {
             field: 'customer',
@@ -121,13 +122,28 @@ const Salereport = () => {
             width: 200,
         },
         {
-            field: 'dateCreated',
+            field: 'inv_date',
             headerName: 'Date Created',
             width: 150,
         },
         {
             field: 'discount',
             headerName: 'Discount',
+            width: 150,
+        },
+        {
+            field: 'total_vat',
+            headerName: 'VAT',
+            width: 150,
+        },
+        {
+            field: 'total_sub_cost',
+            headerName: 'Total Cost',
+            width: 150,
+        },
+        {
+            field: 'total_sub_profit',
+            headerName: 'Total Profit',
             width: 150,
         },
         {
@@ -256,60 +272,25 @@ const Salereport = () => {
                                                     <div className="info-box"></div>
                                                 </div>
                                             </div>
-                                            {/* <div className="row mb-5 justify-content-center">
-                                                <div className="col-md-3 col-xs-4">
-                                                    <div className="info-box">
-                                                        <span className="info-box-icon bg-teal">
-                                                            <i className="bx bx-money text-white" width="24" height="24"></i>
-                                                        </span>
-                                                        <div className="info-box-content">
-                                                            <span className="info-box-text">Total Revenue</span>
-                                                            <span className="info-box-number">Rs.{total_salerevenue}</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="col-md-3 col-xs-4">
-                                                    <div className="info-box">
-                                                        <span className="info-box-icon bg-teal">
-                                                            <i className="bx bx-money text-white" width="24" height="24"></i>
-                                                        </span>
-                                                        <div className="info-box-content">
-                                                            <span className="info-box-text">Total Cost</span>
-                                                            <span className="info-box-number">Rs.{total_salecost}</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="col-md-3 col-xs-4">
-                                                    <div className="info-box">
-                                                        <span className="info-box-icon bg-teal">
-                                                            <i className="bx bx-money text-white" width="24" height="24"></i>
-                                                        </span>
-                                                        <div className="info-box-content">
-                                                            <span className="info-box-text">Total Profit</span>
-                                                            <span className="info-box-number">Rs.{total_saleprofit}</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div> */}
+    
                                         </div>
-                                    </div>
-                                    <div className="row">
-                                        <div className="col-12">
-                                            <div className="card full-height">
-                                                <div style={{ height: 400, width: '100%'}}>
-                                                    <DataGrid
-                                                          theme={useStyles}
-                                                          rows={invoice }
-                                                          columns={columns}
-                                                          pageSize={10}
-                                                         
-                                                       
-                                                    />
+                                        <div className="row">
+                                            <div className="col-12">
+                                                <div className="card full-height">
+                                                    <div style={{ height: 400, width: '100%'}}>
+                                                        <DataGrid
+                                                            theme={useStyles}
+                                                            rows={invoice }
+                                                            columns={columns}
+                                                            pageSize={10}
+                                                            
+                                                        
+                                                        />
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
                                 </TabPanel>  
                     
                     </div>

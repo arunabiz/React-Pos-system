@@ -280,14 +280,17 @@ const Customer = () => {
                                                                required/>
                                                     </div>
                                                     <div className="rowcustomer">
-                                                        <label>Vehicle Brand *</label>
+                                                    <label>Vehicle Brand *</label>
+                                                        <input type="text" autoFocus placeholder="" value={VBrand} onChange={(e) => updateVBrand(e)}
+                                                               required/>
+                                                        {/* <label>Vehicle Brand *</label>
                                                             <select id="department" name="department" value={VBrand} onChange={(e) => updateVBrand(e)} required>
                                                                 <option value="Toyota" selected>Toyota</option>
                                                                 <option value="Mazda" selected>Mazda</option>
                                                                 <option value="Honda" selected>Honda</option>
                                                                 <option value="Benz" selected>Benz</option>
                                                                 <option value="Bmw" selected>Bmw</option>
-                                                            </select>
+                                                            </select> */}
                                                     </div>
                                                 </div>
                                                 <div className="col-6">
