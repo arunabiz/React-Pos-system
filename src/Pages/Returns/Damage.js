@@ -1,5 +1,6 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 // import {Link, Route, useHistory} from 'react-router-dom';
+import axios from 'axios';
 import Sidebar from "../../components/sidebar/Sidebar";
 import TopNav from "../../components/topnav/TopNav";
 import AppBar from "@material-ui/core/AppBar";
@@ -105,6 +106,32 @@ const Damage = () => {
     const handletab = (event, newValue) => {
         setValue(newValue);
     };
+
+    //new
+    const[damage, setdamage] = useState([])
+    const [status,setstatus] = useState(false)
+
+    // const[Return, setReturn] = useState([])
+    // const [status,setstatus] = useState(false)
+
+    useEffect(() => {
+        axios.get('http://127.0.0.1:8000/api/damage/get/').then((response) => {
+            setdamage(response.data.data);
+            console.log(response.data.data)
+        });
+
+    }, [status]);
+
+
+    // useEffect(() => {
+    //     axios.get('http://127.0.0.1:8000/api/return/get/').then((response) => {
+    //         setdamage(response.data.data);
+    //         console.log(response.data.data)
+    //     });
+
+    // }, [status]);
+
+    //new
 
     return (
         <>
